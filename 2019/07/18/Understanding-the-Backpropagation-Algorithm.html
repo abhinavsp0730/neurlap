@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Understanding the Backpropagation Algorithm | Abhinav Prakash</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Understanding the Backpropagation Algorithm" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Easily understand the backpropagation algorithm in a way you’ve never before!" />
+<meta property="og:description" content="Easily understand the backpropagation algorithm in a way you’ve never before!" />
+<link rel="canonical" href="https://abhinavsp0730.github.io/neurlap/2019/07/18/Understanding-the-Backpropagation-Algorithm.html" />
+<meta property="og:url" content="https://abhinavsp0730.github.io/neurlap/2019/07/18/Understanding-the-Backpropagation-Algorithm.html" />
+<meta property="og:site_name" content="Abhinav Prakash" />
+<meta property="og:image" content="https://abhinavsp0730.github.io/neurlap/images/article5.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-18T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"Easily understand the backpropagation algorithm in a way you’ve never before!","mainEntityOfPage":{"@type":"WebPage","@id":"https://abhinavsp0730.github.io/neurlap/2019/07/18/Understanding-the-Backpropagation-Algorithm.html"},"@type":"BlogPosting","url":"https://abhinavsp0730.github.io/neurlap/2019/07/18/Understanding-the-Backpropagation-Algorithm.html","headline":"Understanding the Backpropagation Algorithm","dateModified":"2019-07-18T00:00:00-05:00","datePublished":"2019-07-18T00:00:00-05:00","image":"https://abhinavsp0730.github.io/neurlap/images/article5.jpeg","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/neurlap/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://abhinavsp0730.github.io/neurlap/feed.xml" title="Abhinav Prakash" /><link rel="shortcut icon" type="image/x-icon" href="/neurlap/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Understanding the Backpropagation Algorithm | Abhinav Prakash</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Understanding the Backpropagation Algorithm" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Easily understand the backpropagation algorithm in a way you’ve never before!" />
+<meta property="og:description" content="Easily understand the backpropagation algorithm in a way you’ve never before!" />
+<link rel="canonical" href="https://abhinavsp0730.github.io/neurlap/2019/07/18/Understanding-the-Backpropagation-Algorithm.html" />
+<meta property="og:url" content="https://abhinavsp0730.github.io/neurlap/2019/07/18/Understanding-the-Backpropagation-Algorithm.html" />
+<meta property="og:site_name" content="Abhinav Prakash" />
+<meta property="og:image" content="https://abhinavsp0730.github.io/neurlap/images/article5.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-18T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"Easily understand the backpropagation algorithm in a way you’ve never before!","mainEntityOfPage":{"@type":"WebPage","@id":"https://abhinavsp0730.github.io/neurlap/2019/07/18/Understanding-the-Backpropagation-Algorithm.html"},"@type":"BlogPosting","url":"https://abhinavsp0730.github.io/neurlap/2019/07/18/Understanding-the-Backpropagation-Algorithm.html","headline":"Understanding the Backpropagation Algorithm","dateModified":"2019-07-18T00:00:00-05:00","datePublished":"2019-07-18T00:00:00-05:00","image":"https://abhinavsp0730.github.io/neurlap/images/article5.jpeg","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://abhinavsp0730.github.io/neurlap/feed.xml" title="Abhinav Prakash" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/neurlap/">Abhinav Prakash</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/neurlap/articles/">Articles</a><a class="page-link" href="/neurlap/project/">Projects</a><a class="page-link" href="/neurlap/tweets/">Tweets</a><a class="page-link" href="/neurlap/about/">About Me</a><a class="page-link" href="/neurlap/search/">Search</a><a class="page-link" href="/neurlap/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Understanding the Backpropagation Algorithm</h1><p class="page-description">Easily understand the backpropagation algorithm in a way you’ve never before!</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2019-07-18T00:00:00-05:00" itemprop="datePublished">
+        Jul 18, 2019
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      6 min read
+    
+</span></p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h3"><a href="#intro-to-backpropagation-101--towards-ai">Intro to Backpropagation 101 | Towards AI</a></li>
+<li class="toc-entry toc-h2"><a href="#understanding-the-backpropagation-algorithm">Understanding the Backpropagation Algorithm</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#easily-understand-the-backpropagation-algorithm-in-a-way-youve-never-before">Easily understand the backpropagation algorithm in a way you’ve never before!</a></li>
+<li class="toc-entry toc-h3"><a href="#okay-so-now-jump-into-backpropagation-algorithm-to-understand-it">Okay so, now jump into Backpropagation algorithm to understand it.</a></li>
+<li class="toc-entry toc-h3"><a href="#let-us-understand-back-propagation-with-an-example">Let us understand Back Propagation with an example:</a></li>
+<li class="toc-entry toc-h3"><a href="#now-we-randomly-initialize-the-weights">Now we randomly initialize the weights,</a></li>
+<li class="toc-entry toc-h3"><a href="#let-us-calculate-h1-h2-and-output-h1-output-h2">Let us calculate H1, H2 and output H1, output H2.</a></li>
+<li class="toc-entry toc-h3"><a href="#similarly-we-can-calculate-y1y2-output-y1--output-y2">Similarly, we can calculate y1,y2, output y1 &amp; output y2.</a></li>
+<li class="toc-entry toc-h3"><a href="#calculating-the-total-error">Calculating the total error</a></li>
+<li class="toc-entry toc-h3"><a href="#now-we-have-to-backpropagate-to-upgrade-the-weights">Now we have to backpropagate, to upgrade the weights</a></li>
+<li class="toc-entry toc-h3"><a href="#splitting">Splitting</a></li>
+<li class="toc-entry toc-h3"><a href="#calculated-error-w5-">Calculated error w5:-</a></li>
+<li class="toc-entry toc-h3"><a href="#now-updating-w5">Now updating w5</a></li>
+<li class="toc-entry toc-h3"><a href="#now-at-hidden-layerupdating-w1w2w3w4">Now at hidden layer,updating w1,w2,w3&amp;w4.</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#please-pay-attention-and-look-it-slowly">Please pay attention and look it slowly!</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#consider-the-term-which-is-encircled-orange--let-us-split--apply-the-chain-rule">Consider the term which is encircled orange &amp; let us split &amp; apply the chain rule.</a></li>
+<li class="toc-entry toc-h3"><a href="#now-calculating">Now calculating:</a></li>
+<li class="toc-entry toc-h3"><a href="#we-have-calculated-the-term-which-is-encircled-orange">We have calculated the term which is encircled orange.</a></li>
+<li class="toc-entry toc-h3"><a href="#consider-the-term-which-is-encircled-in-blue">Consider the term which is encircled in blue.</a></li>
+<li class="toc-entry toc-h3"><a href="#consider-the-term-which-is-encircled-in-black">Consider the term which is encircled in black.</a></li>
+<li class="toc-entry toc-h3"><a href="#now-weve-calculated-all-the-terms-which-are-encircled">Now we’ve calculated all the terms which are encircled.</a></li>
+<li class="toc-entry toc-h3"><a href="#updating-w1">Updating w1:</a></li>
+<li class="toc-entry toc-h3"><a href="#and-again-with-the-updated-weights-we-forward-propagate">And again with the updated weights we forward propagate.</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#we-can-now-say-that-backpropagation-is-the-central-mechanism-to-train-any-neural-network">We can now say that backpropagation is the central mechanism to train any neural network.</a></li>
+</ul><h3 id="intro-to-backpropagation-101--towards-ai">
+<a class="anchor" href="#intro-to-backpropagation-101--towards-ai" aria-hidden="true"><span class="octicon octicon-link"></span></a>Intro to Backpropagation 101 | <a href="https://towardsai.net">Towards AI</a>
+</h3>
+
+<h2 id="understanding-the-backpropagation-algorithm">
+<a class="anchor" href="#understanding-the-backpropagation-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Understanding the Backpropagation Algorithm</h2>
+
+<h3 id="easily-understand-the-backpropagation-algorithm-in-a-way-youve-never-before">
+<a class="anchor" href="#easily-understand-the-backpropagation-algorithm-in-a-way-youve-never-before" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong><em>Easily understand the backpropagation algorithm in a way you’ve never before!</em></strong>
+</h3>
+
+<p>You might have been taking a course on deep learning and at the beginning of it, it seems to you very easy, and then you have encountered “backpropagation” and you will start your head scratching because it is too “<em>mathsy</em>.”</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*wr-K2ZlmXY-5M9y1J-OUXg.gif" alt=""></p>
+
+<p><strong>“why there is a need for understanding the Back Propagation algorithm for us?</strong>
+The answer is very simple. We, human beings are always curious to know how things are happening in the real world.
+ For example, when we see human breathing. From outside it looks like it is simply the intake of air &amp; release of CO2.</p>
+
+<p>But, the curiosity of the human race led us, to know that, in this short interval of 1–2 sec.
+The whole blood id first oxygenated &amp; then it transported through nerves and reaches to every single cell of our body.
+And finally, it deoxygenated.</p>
+
+<p>Humans are always curious to know, how the mechanism which governs the things of the real world around us.
+ And for any Deep Learning practitioners our,” Our world revolves around neural networks”.
+So, for the sake of killing your curiosity &amp; and giving you the idea of how neural networks are trained.
+ I’m presenting you with this article.</p>
+
+<p><strong>The context of this article are:-</strong></p>
+<ol>
+  <li>Giving you a brief intro about the neural networks.</li>
+  <li>Try to make you understand Back Propagation in a simpler way.</li>
+  <li>And, finally, we’ll deal with the algorithm of Back Propagation with a concrete example.</li>
+</ol>
+
+<p>Okay! So, first understand what is a neural network.</p>
+
+<p>I don’t know you are aware of a neural network or not. So let us first understand this concept.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*rjhM89acID1wzciUFNjyhA.gif" alt=""></p>
+
+<p><em>A neural network is a series of algorithms that endeavors to recognize,
+underlying relationships in a set of data through a process that mimics the way the human brain operates.
+Neural networks can adapt to changing input; so the network generates the best possible result without needing to redesign the output criteria.</em></p>
+
+<p>or in a simple words, we can describe a neural networks as:-</p>
+
+<p>-It’s just a computer program that learn and behave in a remarkably similar way to human brains.</p>
+
+<ul>
+  <li>
+    <p>Or, it’s just a way how computers learn things, recognize patterns, and make decisions in a human like way.</p>
+  </li>
+  <li>
+    <p>Or, neural networks enable computers to learn from a given sent of data.</p>
+  </li>
+</ul>
+
+<p>-Or, ( in a more elaborative way ) An ANN is simulation of the network of neurons that make up a human brain so that the computer will be able to learn things and make decisions in a human like manner.</p>
+
+<p><em>In simpler words, Back Propagation is the central mechanism to train a neural network. In which we calculate the error of our desired targeted output value &amp; then we adjust the weights in a way to minimize this error.
+it’s similar to human being how we learn from our mistakes.</em></p>
+
+<p>Try to imagine the situation. You are trying to hit a football into the goal post.
+you randomly kick the football with some angle. Then you measure the distance from the goalpost to the spot where your football goes
+in the first attempt.
+ Then we try to minimize this distance by changing the angle by which we kicked the football.
+And finally, we’re able to hit the football into the goal post.</p>
+
+<p>Now, compare this situation with a neural network:-</p>
+<ol>
+  <li>
+    <p>we randomly kicked the football.
+ In a neural network, we initialized the weights randomly.</p>
+  </li>
+  <li>
+    <p>we measure the distance from the goal post &amp; the spot where we hit the ball.’
+ In a neural network, this is called measuring the total error.</p>
+  </li>
+  <li>
+    <p>We changed the angle in such a manner to minimize this distance</p>
+  </li>
+</ol>
+
+<p>In a neural network, this is called updating the weights in order to get the desired targeted output.</p>
+
+<p>The Backpropagation algorithm is a very powerful algorithm in order to train a neural network.
+it’s so powerful that it is used in Zip Code recognition(low-level example),Face recognition (mid-level example) to Sonar target recognition(high-level example).</p>
+
+<p>I hope now you’ve understood Back Propagation.
+So, now you are ready to deal with the mathematical stuffs of Back Propagation.</p>
+
+<h3 id="okay-so-now-jump-into-backpropagation-algorithm-to-understand-it">
+<a class="anchor" href="#okay-so-now-jump-into-backpropagation-algorithm-to-understand-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>Okay so, now jump into Backpropagation algorithm to understand it.</h3>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*vN-q9t2GAQb1ZH2O_VUQ7A.jpeg" alt=""></p>
+
+<p>This is a figure of a simple neural network having 2 layers i.e input, hidden and output layer, respectively. Each layer is having 2 neurons.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2160/1*ye2axME8P0tP3q1TkzVi5w.png" alt=""></p>
+
+<p>The function of a neuron is, to sum up, all the multiplied inputs with its weight &amp; the bias.
+And the Output is followed by the operation of the activation function.</p>
+
+<h3 id="let-us-understand-back-propagation-with-an-example">
+<a class="anchor" href="#let-us-understand-back-propagation-with-an-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Let us understand Back Propagation with an example:</h3>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*aS1zaM91wXrwwOERRtO6FQ.jpeg" alt=""></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*TUSSNWZfo_S3aSUwzorT3A.jpeg" alt=""></p>
+
+<p><em>Here,H1 is a neuron and the sample inputs are x1=0.05,x2=0.10 and the biases are b1=0.35 &amp; b2=0.60.
+ The targeted values are T1=0.01 &amp; T2=0.22</em></p>
+
+<h3 id="now-we-randomly-initialize-the-weights">
+<a class="anchor" href="#now-we-randomly-initialize-the-weights" aria-hidden="true"><span class="octicon octicon-link"></span></a>Now we randomly initialize the weights,</h3>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*QybSyhaYUA_2f2WcFCAAPA.jpeg" alt=""></p>
+
+<p><strong>Note:</strong> <em>In this whole article we’re using SIGMOID as an activation function.</em></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*28fuQfhpPTq0iYSx9I2kBg.jpeg" alt=""></p>
+
+<h3 id="let-us-calculate-h1-h2-and-output-h1-output-h2">
+<a class="anchor" href="#let-us-calculate-h1-h2-and-output-h1-output-h2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Let us calculate H1, H2 and output H1, output H2.</h3>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*xEMJqOHzb2vdk9ZAGj6wEA.jpeg" alt=""></p>
+
+<h3 id="similarly-we-can-calculate-y1y2-output-y1--output-y2">
+<a class="anchor" href="#similarly-we-can-calculate-y1y2-output-y1--output-y2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Similarly, we can calculate y1,y2, output y1 &amp; output y2.</h3>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*5R4N2g9XJRXDXNnmZ5PnJg.jpeg" alt=""></p>
+
+<h3 id="calculating-the-total-error">
+<a class="anchor" href="#calculating-the-total-error" aria-hidden="true"><span class="octicon octicon-link"></span></a>Calculating the total error</h3>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*wXYkRb-Bgyz1W-eUAO1dOQ.jpeg" alt=""></p>
+
+<h3 id="now-we-have-to-backpropagate-to-upgrade-the-weights">
+<a class="anchor" href="#now-we-have-to-backpropagate-to-upgrade-the-weights" aria-hidden="true"><span class="octicon octicon-link"></span></a>Now we have to backpropagate, to upgrade the weights</h3>
+
+<p><em>Consider w5, Error at w5</em></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*ouMKSO9lKY_DFVCgPp42Aw.jpeg" alt=""></p>
+
+<p><em>But there is no term w5 present in the expression of Etotal.
+So we have to split it &amp; apply the chain rule to partially differentiate it.</em></p>
+
+<h3 id="splitting">
+<a class="anchor" href="#splitting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Splitting</h3>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*eowi-PL_abyOD6jd0jxavw.jpeg" alt=""></p>
+
+<p><em>Partially differentiating each term one by one.</em></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*vnhrT3bVfmaQCGh24W1Sig.jpeg" alt=""></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*wC23x9yYyAxyXbiEChDdiw.jpeg" alt=""></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*K67OxPb2B_hzoLVSl6Vc-g.jpeg" alt=""></p>
+
+<h3 id="calculated-error-w5-">
+<a class="anchor" href="#calculated-error-w5-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Calculated error w5:-</h3>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*G9twD4Sz1Us-tA9mCWmE1g.jpeg" alt=""></p>
+
+<h3 id="now-updating-w5">
+<a class="anchor" href="#now-updating-w5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Now updating w5</h3>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*OyOKpPKcLYTk6Xg1rTHZeg.jpeg" alt=""></p>
+
+<p><em>New updated weights,w5=0.3595 &amp; similarly w6=0.4086,w7=0.511 &amp; w8=0.561 .</em></p>
+
+<h3 id="now-at-hidden-layerupdating-w1w2w3w4">
+<a class="anchor" href="#now-at-hidden-layerupdating-w1w2w3w4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Now at hidden layer,updating w1,w2,w3&amp;w4.</h3>
+<p>Consider w1
+Error at w1</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*bwSkuaUXJjEfmMjQwX92xg.jpeg" alt=""></p>
+
+<p><em>But there is no w1 term present in the expression of Etotal.
+ So, in order to do that, we have multiple splits.</em></p>
+
+<h2 id="please-pay-attention-and-look-it-slowly">
+<a class="anchor" href="#please-pay-attention-and-look-it-slowly" aria-hidden="true"><span class="octicon octicon-link"></span></a>Please pay attention and look it slowly!</h2>
+
+<p><em>The terms which are encircled, we can’t differentiate them directly. So, we have to split them.</em></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*bwSkuaUXJjEfmMjQwX92xg.jpeg" alt="see the terms which are encircled."></p>
+
+<h3 id="consider-the-term-which-is-encircled-orange--let-us-split--apply-the-chain-rule">
+<a class="anchor" href="#consider-the-term-which-is-encircled-orange--let-us-split--apply-the-chain-rule" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Consider the term which is encircled orange &amp; let us split &amp; apply the chain rule.</strong>
+</h3>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*SjJR9eI_47zdG4U0-poKTw.jpeg" alt=""></p>
+
+<h3 id="now-calculating">
+<a class="anchor" href="#now-calculating" aria-hidden="true"><span class="octicon octicon-link"></span></a>Now calculating:</h3>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*aVxJV0pisKrBtg29uGliYQ.jpeg" alt=""></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*SggwwZ6oa1EigDTkTC8f7Q.jpeg" alt=""></p>
+
+<h3 id="we-have-calculated-the-term-which-is-encircled-orange">
+<a class="anchor" href="#we-have-calculated-the-term-which-is-encircled-orange" aria-hidden="true"><span class="octicon octicon-link"></span></a>We have calculated the term which is encircled orange.</h3>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*y1UU4A0ohRRCyskoleB2GA.jpeg" alt=""></p>
+
+<h3 id="consider-the-term-which-is-encircled-in-blue">
+<a class="anchor" href="#consider-the-term-which-is-encircled-in-blue" aria-hidden="true"><span class="octicon octicon-link"></span></a>Consider the term which is encircled in blue.</h3>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*oU08xnO9QU7f9Vf02z3JxA.jpeg" alt=""></p>
+
+<h3 id="consider-the-term-which-is-encircled-in-black">
+<a class="anchor" href="#consider-the-term-which-is-encircled-in-black" aria-hidden="true"><span class="octicon octicon-link"></span></a>Consider the term which is encircled in black.</h3>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*zPZ6GktQB7TRKRDUJq-Npg.jpeg" alt=""></p>
+
+<h3 id="now-weve-calculated-all-the-terms-which-are-encircled">
+<a class="anchor" href="#now-weve-calculated-all-the-terms-which-are-encircled" aria-hidden="true"><span class="octicon octicon-link"></span></a>Now we’ve calculated all the terms which are encircled.</h3>
+<p>Therefore the error at w1 is:</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*vMUXSRVpon9rKpYPVsGqcQ.jpeg" alt=""></p>
+
+<h3 id="updating-w1">
+<a class="anchor" href="#updating-w1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updating w1:</h3>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*8VNmSD4aNRTHp_-fV1KPKA.jpeg" alt=""></p>
+
+<p><em>Now, we are having our updated weight w1 and similarly, we can calculate w2,w3 &amp;w4. What we’ve done so far is we Back-Propagated and updated first w5,w6,w7,w8 and then with the help these we further Back-Propagated and updated the weights w1,w2,w3 &amp; w4.</em></p>
+
+<p>So with these updated weights(w1,w2,w3 &amp; w4).We’ve to again calculate H1 &amp; H2.After calculating H1 &amp; H2 ,we can calculate y1 output &amp; y2 output. After that, we can calculate the Total Error as we have done earlier, and again with the help of this new Total Error. We backpropagate &amp; updated the weights.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*wAzdjq5phU6a1NmUugxR7A.jpeg" alt=""></p>
+
+<h3 id="and-again-with-the-updated-weights-we-forward-propagate">
+<a class="anchor" href="#and-again-with-the-updated-weights-we-forward-propagate" aria-hidden="true"><span class="octicon octicon-link"></span></a>And again with the updated weights we forward propagate.</h3>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*XGW_s1iM_rdDiHDmNdyYyw.jpeg" alt=""></p>
+
+<p><em>We’ve to iterate over &amp; over again between Back Propagation &amp; forward propagation.</em></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*wAzdjq5phU6a1NmUugxR7A.jpeg" alt=""></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*6z6cpjseugYHYHFZQcOnkQ.gif" alt=""></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/8320/1*XGW_s1iM_rdDiHDmNdyYyw.jpeg" alt=""></p>
+
+<p><em>Until the Total Error(cost function) is minimized or in other words, the value of our predicted outputs is closer to that of the target values.</em></p>
+
+<p>In one sentence we can define backpropagation <em>*as *it’s a common method of training a neural net in which the initial system output is compared to the desired output, and the system is adjusted until the difference between the two is minimized.</em></p>
+<blockquote>
+  <h1 id="we-can-now-say-that-backpropagation-is-the-central-mechanism-to-train-any-neural-network">
+<a class="anchor" href="#we-can-now-say-that-backpropagation-is-the-central-mechanism-to-train-any-neural-network" aria-hidden="true"><span class="octicon octicon-link"></span></a>We can now say that backpropagation is the central mechanism to train any neural network.</h1>
+</blockquote>
+
+<p>I hope you’ve understood now what is the backpropagation algorithm and how it works.</p>
+
+<p>Congratulations you’ve just understood one of the toughest “<em>mathsy”</em> topics of machine learning.</p>
+
+<p>Don’t forget to give us your 👏 &amp; follow me!!!!!!!</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*HnhqbqJ1vlHFEZmO5oEtqQ.gif" alt="please clap and follow me!!!!"></p>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="abhinavsp0730/neurlap"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/neurlap/2019/07/18/Understanding-the-Backpropagation-Algorithm.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/neurlap/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/neurlap/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/neurlap/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/abhinavsp0730" title="abhinavsp0730"><svg class="svg-icon grey"><use xlink:href="/neurlap/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.linkedin.com/in/abhinav-prakash-706902171" title="abhinav-prakash-706902171"><svg class="svg-icon grey"><use xlink:href="/neurlap/assets/minima-social-icons.svg#linkedin"></use></svg></a></li><li><a rel="me" href="https://twitter.com/neurlap" title="neurlap"><svg class="svg-icon grey"><use xlink:href="/neurlap/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

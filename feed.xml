@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://abhinavsp0730.github.io/neurlap/feed.xml" rel="self" type="application/atom+xml" /><link href="https://abhinavsp0730.github.io/neurlap/" rel="alternate" type="text/html" /><updated>2020-05-13T10:52:28-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/feed.xml</id><title type="html">Abhinav Prakash</title><subtitle>An easy to use blogging platform with support for Jupyter Notebooks.</subtitle><entry><title type="html">TensorFlow callbacks in action</title><link href="https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html" rel="alternate" type="text/html" title="TensorFlow callbacks in action" /><published>2020-06-10T00:00:00-05:00</published><updated>2020-06-10T00:00:00-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION</id><content type="html" xml:base="https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html">&lt;h2 id=&quot;tensorflow-callbacks-in-action&quot;&gt;TensorFlow Callbacks in Action&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://abhinavsp0730.github.io/neurlap/feed.xml" rel="self" type="application/atom+xml" /><link href="https://abhinavsp0730.github.io/neurlap/" rel="alternate" type="text/html" /><updated>2020-05-13T10:55:25-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/feed.xml</id><title type="html">Abhinav Prakash</title><subtitle>An easy to use blogging platform with support for Jupyter Notebooks.</subtitle><entry><title type="html">TensorFlow callbacks in action</title><link href="https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html" rel="alternate" type="text/html" title="TensorFlow callbacks in action" /><published>2020-06-10T00:00:00-05:00</published><updated>2020-06-10T00:00:00-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION</id><content type="html" xml:base="https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html">&lt;h2 id=&quot;tensorflow-callbacks-in-action&quot;&gt;TensorFlow Callbacks in Action&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/4522/1*c5mBC2KTs0oQ_SRGnbtuLA.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -534,7 +534,242 @@ If you like this blog, show some love by doing claps.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*HnhqbqJ1vlHFEZmO5oEtqQ.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;THANK YOU.&lt;/p&gt;</content><author><name></name></author><summary type="html">Diving Into Deep Dream using Tensorflow | Towards AI</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://abhinavsp0730.github.io/neurlap/images/article2.jpeg" /><media:content medium="image" url="https://abhinavsp0730.github.io/neurlap/images/article2.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">How to Use scikit-learn ‘eli5’ Library to Compute Permutation Importance?</title><link href="https://abhinavsp0730.github.io/neurlap/markdown/2019/07/07/How-to-Use-scikit-learn-eli5-Library-to-Compute-Permutation-Importance.html" rel="alternate" type="text/html" title="How to Use scikit-learn ‘eli5’ Library to Compute Permutation Importance?" /><published>2019-07-07T00:00:00-05:00</published><updated>2019-07-07T00:00:00-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/markdown/2019/07/07/How-to-Use-scikit-learn-eli5-Library-to-Compute-Permutation-Importance</id><content type="html" xml:base="https://abhinavsp0730.github.io/neurlap/markdown/2019/07/07/How-to-Use-scikit-learn-eli5-Library-to-Compute-Permutation-Importance.html">&lt;h3 id=&quot;feature-permutation-importance-with-eli5--towards-ai&quot;&gt;Feature Permutation Importance with ‘eli5’ | &lt;a href=&quot;https://towardsai.net/&quot;&gt;Towards AI&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;THANK YOU.&lt;/p&gt;</content><author><name></name></author><summary type="html">Diving Into Deep Dream using Tensorflow | Towards AI</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://abhinavsp0730.github.io/neurlap/images/article2.jpeg" /><media:content medium="image" url="https://abhinavsp0730.github.io/neurlap/images/article2.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Understanding the Backpropagation Algorithm</title><link href="https://abhinavsp0730.github.io/neurlap/2019/07/18/Understanding-the-Backpropagation-Algorithm.html" rel="alternate" type="text/html" title="Understanding the Backpropagation Algorithm" /><published>2019-07-18T00:00:00-05:00</published><updated>2019-07-18T00:00:00-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/2019/07/18/Understanding-the-Backpropagation-Algorithm</id><content type="html" xml:base="https://abhinavsp0730.github.io/neurlap/2019/07/18/Understanding-the-Backpropagation-Algorithm.html">&lt;h3 id=&quot;intro-to-backpropagation-101--towards-ai&quot;&gt;Intro to Backpropagation 101 | &lt;a href=&quot;https://towardsai.net&quot;&gt;Towards AI&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h2 id=&quot;understanding-the-backpropagation-algorithm&quot;&gt;Understanding the Backpropagation Algorithm&lt;/h2&gt;
+
+&lt;h3 id=&quot;easily-understand-the-backpropagation-algorithm-in-a-way-youve-never-before&quot;&gt;&lt;strong&gt;&lt;em&gt;Easily understand the backpropagation algorithm in a way you’ve never before!&lt;/em&gt;&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;You might have been taking a course on deep learning and at the beginning of it, it seems to you very easy, and then you have encountered “backpropagation” and you will start your head scratching because it is too “&lt;em&gt;mathsy&lt;/em&gt;.”&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*wr-K2ZlmXY-5M9y1J-OUXg.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;“why there is a need for understanding the Back Propagation algorithm for us?&lt;/strong&gt;
+The answer is very simple. We, human beings are always curious to know how things are happening in the real world.
+ For example, when we see human breathing. From outside it looks like it is simply the intake of air &amp;amp; release of CO2.&lt;/p&gt;
+
+&lt;p&gt;But, the curiosity of the human race led us, to know that, in this short interval of 1–2 sec.
+The whole blood id first oxygenated &amp;amp; then it transported through nerves and reaches to every single cell of our body.
+And finally, it deoxygenated.&lt;/p&gt;
+
+&lt;p&gt;Humans are always curious to know, how the mechanism which governs the things of the real world around us.
+ And for any Deep Learning practitioners our,” Our world revolves around neural networks”.
+So, for the sake of killing your curiosity &amp;amp; and giving you the idea of how neural networks are trained.
+ I’m presenting you with this article.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The context of this article are:-&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Giving you a brief intro about the neural networks.&lt;/li&gt;
+  &lt;li&gt;Try to make you understand Back Propagation in a simpler way.&lt;/li&gt;
+  &lt;li&gt;And, finally, we’ll deal with the algorithm of Back Propagation with a concrete example.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Okay! So, first understand what is a neural network.&lt;/p&gt;
+
+&lt;p&gt;I don’t know you are aware of a neural network or not. So let us first understand this concept.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*rjhM89acID1wzciUFNjyhA.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;A neural network is a series of algorithms that endeavors to recognize,
+underlying relationships in a set of data through a process that mimics the way the human brain operates.
+Neural networks can adapt to changing input; so the network generates the best possible result without needing to redesign the output criteria.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;or in a simple words, we can describe a neural networks as:-&lt;/p&gt;
+
+&lt;p&gt;-It’s just a computer program that learn and behave in a remarkably similar way to human brains.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Or, it’s just a way how computers learn things, recognize patterns, and make decisions in a human like way.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Or, neural networks enable computers to learn from a given sent of data.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;-Or, ( in a more elaborative way ) An ANN is simulation of the network of neurons that make up a human brain so that the computer will be able to learn things and make decisions in a human like manner.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;In simpler words, Back Propagation is the central mechanism to train a neural network. In which we calculate the error of our desired targeted output value &amp;amp; then we adjust the weights in a way to minimize this error.
+it’s similar to human being how we learn from our mistakes.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Try to imagine the situation. You are trying to hit a football into the goal post.
+you randomly kick the football with some angle. Then you measure the distance from the goalpost to the spot where your football goes
+in the first attempt.
+ Then we try to minimize this distance by changing the angle by which we kicked the football.
+And finally, we’re able to hit the football into the goal post.&lt;/p&gt;
+
+&lt;p&gt;Now, compare this situation with a neural network:-&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;we randomly kicked the football.
+ In a neural network, we initialized the weights randomly.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;we measure the distance from the goal post &amp;amp; the spot where we hit the ball.’
+ In a neural network, this is called measuring the total error.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;We changed the angle in such a manner to minimize this distance&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In a neural network, this is called updating the weights in order to get the desired targeted output.&lt;/p&gt;
+
+&lt;p&gt;The Backpropagation algorithm is a very powerful algorithm in order to train a neural network.
+it’s so powerful that it is used in Zip Code recognition(low-level example),Face recognition (mid-level example) to Sonar target recognition(high-level example).&lt;/p&gt;
+
+&lt;p&gt;I hope now you’ve understood Back Propagation.
+So, now you are ready to deal with the mathematical stuffs of Back Propagation.&lt;/p&gt;
+
+&lt;h3 id=&quot;okay-so-now-jump-into-backpropagation-algorithm-to-understand-it&quot;&gt;Okay so, now jump into Backpropagation algorithm to understand it.&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*vN-q9t2GAQb1ZH2O_VUQ7A.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is a figure of a simple neural network having 2 layers i.e input, hidden and output layer, respectively. Each layer is having 2 neurons.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2160/1*ye2axME8P0tP3q1TkzVi5w.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The function of a neuron is, to sum up, all the multiplied inputs with its weight &amp;amp; the bias.
+And the Output is followed by the operation of the activation function.&lt;/p&gt;
+
+&lt;h3 id=&quot;let-us-understand-back-propagation-with-an-example&quot;&gt;Let us understand Back Propagation with an example:&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*aS1zaM91wXrwwOERRtO6FQ.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*TUSSNWZfo_S3aSUwzorT3A.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Here,H1 is a neuron and the sample inputs are x1=0.05,x2=0.10 and the biases are b1=0.35 &amp;amp; b2=0.60.
+ The targeted values are T1=0.01 &amp;amp; T2=0.22&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;now-we-randomly-initialize-the-weights&quot;&gt;Now we randomly initialize the weights,&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*QybSyhaYUA_2f2WcFCAAPA.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;em&gt;In this whole article we’re using SIGMOID as an activation function.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*28fuQfhpPTq0iYSx9I2kBg.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;let-us-calculate-h1-h2-and-output-h1-output-h2&quot;&gt;Let us calculate H1, H2 and output H1, output H2.&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*xEMJqOHzb2vdk9ZAGj6wEA.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;similarly-we-can-calculate-y1y2-output-y1--output-y2&quot;&gt;Similarly, we can calculate y1,y2, output y1 &amp;amp; output y2.&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*5R4N2g9XJRXDXNnmZ5PnJg.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;calculating-the-total-error&quot;&gt;Calculating the total error&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*wXYkRb-Bgyz1W-eUAO1dOQ.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;now-we-have-to-backpropagate-to-upgrade-the-weights&quot;&gt;Now we have to backpropagate, to upgrade the weights&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;Consider w5, Error at w5&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*ouMKSO9lKY_DFVCgPp42Aw.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;But there is no term w5 present in the expression of Etotal.
+So we have to split it &amp;amp; apply the chain rule to partially differentiate it.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;splitting&quot;&gt;Splitting&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*eowi-PL_abyOD6jd0jxavw.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Partially differentiating each term one by one.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*vnhrT3bVfmaQCGh24W1Sig.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*wC23x9yYyAxyXbiEChDdiw.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*K67OxPb2B_hzoLVSl6Vc-g.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;calculated-error-w5-&quot;&gt;Calculated error w5:-&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*G9twD4Sz1Us-tA9mCWmE1g.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;now-updating-w5&quot;&gt;Now updating w5&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*OyOKpPKcLYTk6Xg1rTHZeg.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;New updated weights,w5=0.3595 &amp;amp; similarly w6=0.4086,w7=0.511 &amp;amp; w8=0.561 .&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;now-at-hidden-layerupdating-w1w2w3w4&quot;&gt;Now at hidden layer,updating w1,w2,w3&amp;amp;w4.&lt;/h3&gt;
+&lt;p&gt;Consider w1
+Error at w1&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*bwSkuaUXJjEfmMjQwX92xg.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;But there is no w1 term present in the expression of Etotal.
+ So, in order to do that, we have multiple splits.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;please-pay-attention-and-look-it-slowly&quot;&gt;Please pay attention and look it slowly!&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;The terms which are encircled, we can’t differentiate them directly. So, we have to split them.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*bwSkuaUXJjEfmMjQwX92xg.jpeg&quot; alt=&quot;see the terms which are encircled.&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;consider-the-term-which-is-encircled-orange--let-us-split--apply-the-chain-rule&quot;&gt;&lt;strong&gt;Consider the term which is encircled orange &amp;amp; let us split &amp;amp; apply the chain rule.&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*SjJR9eI_47zdG4U0-poKTw.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;now-calculating&quot;&gt;Now calculating:&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*aVxJV0pisKrBtg29uGliYQ.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*SggwwZ6oa1EigDTkTC8f7Q.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;we-have-calculated-the-term-which-is-encircled-orange&quot;&gt;We have calculated the term which is encircled orange.&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*y1UU4A0ohRRCyskoleB2GA.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;consider-the-term-which-is-encircled-in-blue&quot;&gt;Consider the term which is encircled in blue.&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*oU08xnO9QU7f9Vf02z3JxA.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;consider-the-term-which-is-encircled-in-black&quot;&gt;Consider the term which is encircled in black.&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*zPZ6GktQB7TRKRDUJq-Npg.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;now-weve-calculated-all-the-terms-which-are-encircled&quot;&gt;Now we’ve calculated all the terms which are encircled.&lt;/h3&gt;
+&lt;p&gt;Therefore the error at w1 is:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*vMUXSRVpon9rKpYPVsGqcQ.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;updating-w1&quot;&gt;Updating w1:&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*8VNmSD4aNRTHp_-fV1KPKA.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Now, we are having our updated weight w1 and similarly, we can calculate w2,w3 &amp;amp;w4. What we’ve done so far is we Back-Propagated and updated first w5,w6,w7,w8 and then with the help these we further Back-Propagated and updated the weights w1,w2,w3 &amp;amp; w4.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;So with these updated weights(w1,w2,w3 &amp;amp; w4).We’ve to again calculate H1 &amp;amp; H2.After calculating H1 &amp;amp; H2 ,we can calculate y1 output &amp;amp; y2 output. After that, we can calculate the Total Error as we have done earlier, and again with the help of this new Total Error. We backpropagate &amp;amp; updated the weights.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*wAzdjq5phU6a1NmUugxR7A.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;and-again-with-the-updated-weights-we-forward-propagate&quot;&gt;And again with the updated weights we forward propagate.&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*XGW_s1iM_rdDiHDmNdyYyw.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;We’ve to iterate over &amp;amp; over again between Back Propagation &amp;amp; forward propagation.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*wAzdjq5phU6a1NmUugxR7A.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*6z6cpjseugYHYHFZQcOnkQ.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/8320/1*XGW_s1iM_rdDiHDmNdyYyw.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Until the Total Error(cost function) is minimized or in other words, the value of our predicted outputs is closer to that of the target values.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In one sentence we can define backpropagation &lt;em&gt;*as *it’s a common method of training a neural net in which the initial system output is compared to the desired output, and the system is adjusted until the difference between the two is minimized.&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;h1 id=&quot;we-can-now-say-that-backpropagation-is-the-central-mechanism-to-train-any-neural-network&quot;&gt;We can now say that backpropagation is the central mechanism to train any neural network.&lt;/h1&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I hope you’ve understood now what is the backpropagation algorithm and how it works.&lt;/p&gt;
+
+&lt;p&gt;Congratulations you’ve just understood one of the toughest “&lt;em&gt;mathsy”&lt;/em&gt; topics of machine learning.&lt;/p&gt;
+
+&lt;p&gt;Don’t forget to give us your 👏 &amp;amp; follow me!!!!!!!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*HnhqbqJ1vlHFEZmO5oEtqQ.gif&quot; alt=&quot;please clap and follow me!!!!&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Intro to Backpropagation 101 | Towards AI</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://abhinavsp0730.github.io/neurlap/images/article5.jpeg" /><media:content medium="image" url="https://abhinavsp0730.github.io/neurlap/images/article5.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">How to Use scikit-learn ‘eli5’ Library to Compute Permutation Importance?</title><link href="https://abhinavsp0730.github.io/neurlap/markdown/2019/07/07/How-to-Use-scikit-learn-eli5-Library-to-Compute-Permutation-Importance.html" rel="alternate" type="text/html" title="How to Use scikit-learn ‘eli5’ Library to Compute Permutation Importance?" /><published>2019-07-07T00:00:00-05:00</published><updated>2019-07-07T00:00:00-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/markdown/2019/07/07/How-to-Use-scikit-learn-eli5-Library-to-Compute-Permutation-Importance</id><content type="html" xml:base="https://abhinavsp0730.github.io/neurlap/markdown/2019/07/07/How-to-Use-scikit-learn-eli5-Library-to-Compute-Permutation-Importance.html">&lt;h3 id=&quot;feature-permutation-importance-with-eli5--towards-ai&quot;&gt;Feature Permutation Importance with ‘eli5’ | &lt;a href=&quot;https://towardsai.net/&quot;&gt;Towards AI&lt;/a&gt;&lt;/h3&gt;
 
 &lt;h2 id=&quot;how-to-use-scikit-learn-eli5-library-to-compute-permutation-importance&quot;&gt;How to Use scikit-learn ‘eli5’ Library to Compute Permutation Importance?&lt;/h2&gt;
 
