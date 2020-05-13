@@ -3,30 +3,30 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>About Me | Abhinav Prakash</title>
+<title>Tweets | Abhinav Prakash</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="About Me" />
+<meta property="og:title" content="Tweets" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://abhinavsp0730.github.io/neurlap/about/" />
-<meta property="og:url" content="https://abhinavsp0730.github.io/neurlap/about/" />
+<link rel="canonical" href="https://abhinavsp0730.github.io/neurlap/tweets/" />
+<meta property="og:url" content="https://abhinavsp0730.github.io/neurlap/tweets/" />
 <meta property="og:site_name" content="Abhinav Prakash" />
 <script type="application/ld+json">
-{"description":"An easy to use blogging platform with support for Jupyter Notebooks.","@type":"WebSite","url":"https://abhinavsp0730.github.io/neurlap/about/","name":"Abhinav Prakash","headline":"About Me","@context":"https://schema.org"}</script>
+{"description":"An easy to use blogging platform with support for Jupyter Notebooks.","@type":"WebPage","url":"https://abhinavsp0730.github.io/neurlap/tweets/","headline":"Tweets","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/neurlap/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://abhinavsp0730.github.io/neurlap/feed.xml" title="Abhinav Prakash" /><link rel="shortcut icon" type="image/x-icon" href="/neurlap/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>About Me | Abhinav Prakash</title>
+<title>Tweets | Abhinav Prakash</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="About Me" />
+<meta property="og:title" content="Tweets" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://abhinavsp0730.github.io/neurlap/about/" />
-<meta property="og:url" content="https://abhinavsp0730.github.io/neurlap/about/" />
+<link rel="canonical" href="https://abhinavsp0730.github.io/neurlap/tweets/" />
+<meta property="og:url" content="https://abhinavsp0730.github.io/neurlap/tweets/" />
 <meta property="og:site_name" content="Abhinav Prakash" />
 <script type="application/ld+json">
-{"description":"An easy to use blogging platform with support for Jupyter Notebooks.","@type":"WebSite","url":"https://abhinavsp0730.github.io/neurlap/about/","name":"Abhinav Prakash","headline":"About Me","@context":"https://schema.org"}</script>
+{"description":"An easy to use blogging platform with support for Jupyter Notebooks.","@type":"WebPage","url":"https://abhinavsp0730.github.io/neurlap/tweets/","headline":"Tweets","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -81,25 +81,11 @@ window.onload = wrap_img;
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">About Me</h1>
+    <h1 class="post-title">Tweets</h1>
   </header>
 
   <div class="post-content">
-    <p>Give me the data and I’ll show you its true potential. <br />
-I let computers see with the help of neural networks. <br />
-I build End-to-End Machine Learning products. I know how to use data efficiently. <br />
-Give me data and I’ll turn into them live projects. <br />
-Helping humanity with the help of AI with this aim founded <a href="https://xiken.tech/"><strong>xiken.tech</strong></a> . <br />
-I’m the lead of state-level project name <a href="https://projectantivenom.netlify.app/"><strong>ProjectAntivenom</strong></a>. <br />
-I’m a speaker and a blogger who loves to help the community, who believes knowledge is of no use. <br />
-if you don’t share and apply it. Reach out to me for spreading the knowledge of AI into your community events. <br />
-I’m the co-organizer of <a href="https://www.meetup.com/PyData-Bhubaneswar/"><strong>PyData Bhubaneswar Chapter</strong></a>. <br />
-⚡⚡⚡⚡⚡ I’m open for internship opportunity and freelancing project   ⚡⚡⚡⚡⚡⚡⚡⚡ <br />
-🛠️ Construct Ai solution for your real-world problem. <br />
-🛠️ Interested In to build Ai solution for Health Care . <br />
-🛠️ Looking For internship and freelancing project. <br />
-🛠️ Drop an Email to abhinavsp0730@gmail.com for further discussion.</p>
-
+    > twitter: https://twitter.com/NeurlAP/status/1257629804070948865
 
   </div>
 
