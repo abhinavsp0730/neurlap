@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>TensorFlow callbacks in action | Abhinav Prakash</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="TensorFlow callbacks in action" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A minimal example of using markdown with fastpages." />
+<meta property="og:description" content="A minimal example of using markdown with fastpages." />
+<link rel="canonical" href="https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html" />
+<meta property="og:url" content="https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html" />
+<meta property="og:site_name" content="Abhinav Prakash" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-10T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"A minimal example of using markdown with fastpages.","@type":"BlogPosting","headline":"TensorFlow callbacks in action","dateModified":"2020-06-10T00:00:00-05:00","datePublished":"2020-06-10T00:00:00-05:00","url":"https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/neurlap/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://abhinavsp0730.github.io/neurlap/feed.xml" title="Abhinav Prakash" /><link rel="shortcut icon" type="image/x-icon" href="/neurlap/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>TensorFlow callbacks in action | Abhinav Prakash</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="TensorFlow callbacks in action" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A minimal example of using markdown with fastpages." />
+<meta property="og:description" content="A minimal example of using markdown with fastpages." />
+<link rel="canonical" href="https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html" />
+<meta property="og:url" content="https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html" />
+<meta property="og:site_name" content="Abhinav Prakash" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-10T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"A minimal example of using markdown with fastpages.","@type":"BlogPosting","headline":"TensorFlow callbacks in action","dateModified":"2020-06-10T00:00:00-05:00","datePublished":"2020-06-10T00:00:00-05:00","url":"https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://abhinavsp0730.github.io/neurlap/feed.xml" title="Abhinav Prakash" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/neurlap/">Abhinav Prakash</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/neurlap/about/">About Me</a><a class="page-link" href="/neurlap/search/">Search</a><a class="page-link" href="/neurlap/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">TensorFlow callbacks in action</h1><p class="page-description">A minimal example of using markdown with fastpages.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-06-10T00:00:00-05:00" itemprop="datePublished">
+        Jun 10, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      6 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/neurlap/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#tensorflow-callbacks-in-action">TensorFlow Callbacks in Action</a></li>
+<li class="toc-entry toc-h2"><a href="#1-custom-callbacks-by-subclassing-callback-class">1. Custom callbacks by subclassing callback class.</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#output">Output:</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#2-earlystopping-callback">2. EarlyStopping Callback.</a></li>
+<li class="toc-entry toc-h2"><a href="#3-reducelronplateau">3. ReduceLROnPlateau.</a></li>
+<li class="toc-entry toc-h2"><a href="#4-modelcheckpoint">4. ModelCheckpoint</a></li>
+<li class="toc-entry toc-h2"><a href="#5-learningratescheduler">5. LearningRateScheduler</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#output-1">Output:</a></li>
+<li class="toc-entry toc-h3"><a href="#resources">Resources</a></li>
+</ul>
+</li>
+</ul><h2 id="tensorflow-callbacks-in-action">
+<a class="anchor" href="#tensorflow-callbacks-in-action" aria-hidden="true"><span class="octicon octicon-link"></span></a>TensorFlow Callbacks in Action</h2>
+
+<p><img src="https://cdn-images-1.medium.com/max/4522/1*c5mBC2KTs0oQ_SRGnbtuLA.jpeg" alt=""></p>
+
+<p>In layman terms, if I want to introduce callbacks, then it’s the controller by which you can control your plane. Without these controllers, you’re not having any control over the plane, and you’ll crash.</p>
+
+<p>Callbacks: from keras.io, a callback is an object that can perform actions at various stages of training (e.g., at the start or end of an epoch, before or after a single batch, etc.).</p>
+
+<p>It means that callbacks are the functions by which you can perform a particular task during the training
+process of your model. 
+So, what can you do with these callbacks?</p>
+<ol>
+  <li>You can perform a particular task after the starting and ending of the training/batch/ epochs.</li>
+  <li>You can periodically save the model states in the disk.</li>
+  <li>You can schedule the learning rate as per your task.</li>
+  <li>You can automatically stop the training when a particular condition becomes True.</li>
+  <li>And you can do anything during the training process by subclassing these callbacks.</li>
+</ol>
+
+<p>For example, you can make your training output clean and colorful like this, pretty awesome, right?</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2974/1*RnOcxRCIhX7gtX7nv9RdGQ.png" alt=""></p>
+
+<p>Tensorflow provides a wide range of callbacks under the base class “tf.keras.callbacks. “For the full list of callbacks please visit <a href="https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/Callback">TensorFlow’s website</a>.</p>
+
+<p>In this article, we’re going to cover some of the essential TensorFlow callbacks and how to use them to have full control over the training.</p>
+
+<p>The context of this article are:-</p>
+<ol>
+  <li>custom callbacks by subclassing callback class.</li>
+  <li>Early stopping callback.</li>
+  <li>Model checkpoint callback.</li>
+  <li>ReduceOnPlateu callback.</li>
+  <li>Learning rate Scheduler.</li>
+  <li>Bonus package for making the output clean and colorful, as shown above.</li>
+</ol>
+
+<p>But let’s first load the cats_vs_dogs dataset, I’ve been using the very small subclass of the original dataset. And then, let’s define our model architecture using sequential API. Throughout this article, I’m using this dataset and this model architecture.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2852/1*kSuHL1TUQ8R_m8W8HNSXuw.png" alt=""></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/3976/1*pRCO7A6g-xN_Y_F08M_qyw.png" alt=""></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2792/1*aLfWln5XjPiqy33oW6WuyQ.png" alt=""></p>
+
+<p>Note:- This article is all about the TensorFlow callbacks and not for making a world-class ML model and for achieving the state-of-art result. So, throughout this article, ignore the loss and the metrics and try to focus on how to use these callbacks. The dataset is minimal, and it may overfit, but you can ignore all these things.</p>
+
+<p>So, without further delay, let’s start learning about the callbacks mentioned above.</p>
+
+<h2 id="1-custom-callbacks-by-subclassing-callback-class">
+<a class="anchor" href="#1-custom-callbacks-by-subclassing-callback-class" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Custom callbacks by subclassing callback class.</h2>
+
+<p>These callbacks come under the base class “tf.keras.callbacks.”
+By subclassing these callbacks, we can perform certain functions when the training/batch/epochs have started or ended.
+For this, we can override the function of callback classes.
+The name of these functions is self explain their behavior.
+For example def on_train_begin(), this means what to do when
+training will begin.
+Let’s see below how to override these functions. We can
+also, monitor logs and perform certain actions, generally at 
+the starting or the ending of the training/batch/epochs.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/3636/1*RGOhsL79FZa8wj0lKlyqgg.png" alt=""></p>
+
+<h3 id="output">
+<a class="anchor" href="#output" aria-hidden="true"><span class="octicon octicon-link"></span></a>Output:</h3>
+
+<p><img src="https://cdn-images-1.medium.com/max/4096/1*w03z-RdHpES2_24NqZj17Q.png" alt=""></p>
+
+<h2 id="2-earlystopping-callback">
+<a class="anchor" href="#2-earlystopping-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. EarlyStopping Callback.</h2>
+
+<p>Suppose we don’t know about the callbacks, and you want to prevent the overfitting of the model caused by training our model into extra epochs(we’re not god so that we know at how many epochs our model is going to converge). So, we plot the val_loss vs. epochs graph and examine
+how many epochs it’s started overfitting the data. Then we’ll re-train our model in less than that epoch number.
+What if I’ll tell you don’t have to do this thing manually.
+Yes, you can do this by using EarlyStopping Callback.
+So, let’s see how one can use this callback.</p>
+
+<p>First, import the callback, and then create the instance of the
+EarlyStopping callback and pass the arguments as per our needs.
+Lemme explain these arguements .</p>
+
+<ul>
+  <li>
+    <p>“monitor” you can pass the loss or the metric.
+Generally, we pass val_loss and monitor it.</p>
+  </li>
+  <li>
+    <p>“min_delta” you can pass an integer in this argument.
+In simple words, you’re telling the callback that the model
+is not improving if it’s not decreasing more/less than the loss/metrics.</p>
+  </li>
+  <li>
+    <p>“patience,” it means about how many epochs to wait.
+And after that, if there is no improvement seen in the
+model performance according to the value of “min delta,” then stop the training.</p>
+  </li>
+  <li>
+    <p>“mode”
+By default it’s set to ‘auto’ this comes handy when
+you’re dealing with the custom loss/metric. So, you can 
+tell the callback whether the model is improving when
+its custom loss/metric is decreasing then set it to “min” 
+or increasing then set it to “max.”</p>
+  </li>
+</ul>
+
+<p><img src="https://cdn-images-1.medium.com/max/2556/1*AZnvwzjQZ9mwmQqRVqalRA.png" alt=""></p>
+
+<h2 id="3-reducelronplateau">
+<a class="anchor" href="#3-reducelronplateau" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. ReduceLROnPlateau.</h2>
+
+<p>This callback is used to reduce the learning rate if there is 
+not any improvement in the loss/metric.</p>
+
+<p>The arguments are:</p>
+
+<ul>
+  <li>
+    <p>“monitor” it’s set to that loss/metric as a string
+ of which we are reducing the learning if it’ll not improve.</p>
+  </li>
+  <li>
+    <p>“factor” You can pass an integer in this argument,
+and say your current learning rate is LR, then if
+there is not any improvement seen in the monitored loss/metric,
+then the learning is going to decrease by that “factor.”
+i.e new learning rate = lr * factor</p>
+  </li>
+  <li>
+    <p>“Verbose”
+You can set verbose =1 to see the learning rate at every epoch.
+Or verbose = 0 to disable it.</p>
+  </li>
+</ul>
+
+<p>The argument min_delta and mode are the same as explained in the arguments of EarlyStopping Callback.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2724/1*MnHPbv6vcM7s5y9_0KNgPA.png" alt=""></p>
+
+<h2 id="4-modelcheckpoint">
+<a class="anchor" href="#4-modelcheckpoint" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. ModelCheckpoint</h2>
+
+<p>Let’s imagine you’re training a heavy model like Bert in colab,
+and it requires a lot of time for training. So, you started the model training and went for sleep. And then the next morning
+you wake up, and you open your colab.
+But you’ll see the “Runtime Disconnect” message on your screen.
+Sounds like a nightmare tough?
+For this problem, ModelCheckpoint comes as a savior in our life. We can save the checkpoints at the end of every epoch.
+So, that we can load the weights or resume the training if 
+something terrible happens while training.</p>
+
+<p>So, let’s see how we can use this callback. We can save
+the model checkpoint in Keras h5/hd5 format or TensorFlow pb
+format. If you pass the argument “filepath= model.h5”(.h5 extension)
+it’ll be saved in the Keras format or “filepath= model.p”(.pb extension)
+for saving in the TensorFlow model format.</p>
+
+<p>Also, there are two options to save the checkpoint either you can save the entire architecture+weights or just the weights. You can do this by setting “save_only_weights=True” or “save_only_weights=False”</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2928/1*vONkDZiWccWGODEcldupQQ.png" alt=""></p>
+
+<h2 id="5-learningratescheduler">
+<a class="anchor" href="#5-learningratescheduler" aria-hidden="true"><span class="octicon octicon-link"></span></a>5. LearningRateScheduler</h2>
+<blockquote>
+  <p>The simplest way to schedule the learning is to decrease the learning rate 
+linearly from a large initial value to a small value. 
+This allows large weight changes at the beginning of the 
+the learning process and small changes or fine-tuning towards
+the end of the learning process.</p>
+</blockquote>
+
+<p>Let’s see how to schedule the learning rate. For this, we have to
+define an auxiliary function that contains the rules for
+alternating the learning rate. 
+And then we can simply pass the name of this auxiliary function
+to the argument of the object of the LearningRateScheduler class.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/3736/1*SSwVhCH4nNh9YMVT2wpfFw.png" alt=""></p>
+
+<h3 id="output-1">
+<a class="anchor" href="#output-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Output:</h3>
+
+<p><img src="https://cdn-images-1.medium.com/max/4096/1*x9kGtMuAvqXEpbn00uNf_g.png" alt=""></p>
+
+<p>lastly here is the utility file to make training output cleaner and colorful.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2974/1*RnOcxRCIhX7gtX7nv9RdGQ.png" alt=""></p>
+
+<h3 id="resources">
+<a class="anchor" href="#resources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resources</h3>
+
+<p><a href="https://github.com/abhinavsp0730/callback_blog">Repository on Github</a>:</p>
+
+<p>You can run all the code above on <a href="https://colab.research.google.com/drive/1HRAt-ViaZW2BpwjY51rn64W3VBrTp-FI?usp=sharing">Google’s colab</a>.</p>
+
+  </div><a class="u-url" href="/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/neurlap/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/neurlap/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/neurlap/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/abhinavsp0730" title="abhinavsp0730"><svg class="svg-icon grey"><use xlink:href="/neurlap/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.linkedin.com/in/abhinav-prakash-706902171" title="abhinav-prakash-706902171"><svg class="svg-icon grey"><use xlink:href="/neurlap/assets/minima-social-icons.svg#linkedin"></use></svg></a></li><li><a rel="me" href="https://twitter.com/neurlap" title="neurlap"><svg class="svg-icon grey"><use xlink:href="/neurlap/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
