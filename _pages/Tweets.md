@@ -3,4 +3,4 @@ layout: page
 title: Tweets
 permalink: /tweets/
 ---
-> twitter: https://twitter.com/NeurlAP/status/1257629804070948865?s=20
+> twitter: https://twitter.com/jakevdp/status/1204765621767901185?s=20
