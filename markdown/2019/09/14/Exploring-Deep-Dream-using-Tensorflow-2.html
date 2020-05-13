@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Tf.estimator, a Tensorflow High-level API | Abhinav Prakash</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Tf.estimator, a Tensorflow High-level API" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Deep Dream is a computer vision program created by Google engineer Alex Mordvintsev which uses a convolutional neural network to find and enhance patterns in images via algorithmic pareidolia, thus creating a Dream-like hallucinogenic appearance in the deliberately over-processed images." />
+<meta property="og:description" content="Deep Dream is a computer vision program created by Google engineer Alex Mordvintsev which uses a convolutional neural network to find and enhance patterns in images via algorithmic pareidolia, thus creating a Dream-like hallucinogenic appearance in the deliberately over-processed images." />
+<link rel="canonical" href="https://abhinavsp0730.github.io/neurlap/markdown/2019/09/14/Exploring-Deep-Dream-using-Tensorflow-2.html" />
+<meta property="og:url" content="https://abhinavsp0730.github.io/neurlap/markdown/2019/09/14/Exploring-Deep-Dream-using-Tensorflow-2.html" />
+<meta property="og:site_name" content="Abhinav Prakash" />
+<meta property="og:image" content="https://abhinavsp0730.github.io/neurlap/images/article2.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-09-14T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"Deep Dream is a computer vision program created by Google engineer Alex Mordvintsev which uses a convolutional neural network to find and enhance patterns in images via algorithmic pareidolia, thus creating a Dream-like hallucinogenic appearance in the deliberately over-processed images.","mainEntityOfPage":{"@type":"WebPage","@id":"https://abhinavsp0730.github.io/neurlap/markdown/2019/09/14/Exploring-Deep-Dream-using-Tensorflow-2.html"},"@type":"BlogPosting","url":"https://abhinavsp0730.github.io/neurlap/markdown/2019/09/14/Exploring-Deep-Dream-using-Tensorflow-2.html","headline":"Tf.estimator, a Tensorflow High-level API","dateModified":"2019-09-14T00:00:00-05:00","datePublished":"2019-09-14T00:00:00-05:00","image":"https://abhinavsp0730.github.io/neurlap/images/article2.jpeg","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/neurlap/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://abhinavsp0730.github.io/neurlap/feed.xml" title="Abhinav Prakash" /><link rel="shortcut icon" type="image/x-icon" href="/neurlap/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Tf.estimator, a Tensorflow High-level API | Abhinav Prakash</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Tf.estimator, a Tensorflow High-level API" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Deep Dream is a computer vision program created by Google engineer Alex Mordvintsev which uses a convolutional neural network to find and enhance patterns in images via algorithmic pareidolia, thus creating a Dream-like hallucinogenic appearance in the deliberately over-processed images." />
+<meta property="og:description" content="Deep Dream is a computer vision program created by Google engineer Alex Mordvintsev which uses a convolutional neural network to find and enhance patterns in images via algorithmic pareidolia, thus creating a Dream-like hallucinogenic appearance in the deliberately over-processed images." />
+<link rel="canonical" href="https://abhinavsp0730.github.io/neurlap/markdown/2019/09/14/Exploring-Deep-Dream-using-Tensorflow-2.html" />
+<meta property="og:url" content="https://abhinavsp0730.github.io/neurlap/markdown/2019/09/14/Exploring-Deep-Dream-using-Tensorflow-2.html" />
+<meta property="og:site_name" content="Abhinav Prakash" />
+<meta property="og:image" content="https://abhinavsp0730.github.io/neurlap/images/article2.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-09-14T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"Deep Dream is a computer vision program created by Google engineer Alex Mordvintsev which uses a convolutional neural network to find and enhance patterns in images via algorithmic pareidolia, thus creating a Dream-like hallucinogenic appearance in the deliberately over-processed images.","mainEntityOfPage":{"@type":"WebPage","@id":"https://abhinavsp0730.github.io/neurlap/markdown/2019/09/14/Exploring-Deep-Dream-using-Tensorflow-2.html"},"@type":"BlogPosting","url":"https://abhinavsp0730.github.io/neurlap/markdown/2019/09/14/Exploring-Deep-Dream-using-Tensorflow-2.html","headline":"Tf.estimator, a Tensorflow High-level API","dateModified":"2019-09-14T00:00:00-05:00","datePublished":"2019-09-14T00:00:00-05:00","image":"https://abhinavsp0730.github.io/neurlap/images/article2.jpeg","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://abhinavsp0730.github.io/neurlap/feed.xml" title="Abhinav Prakash" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/neurlap/">Abhinav Prakash</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/neurlap/about/">About Me</a><a class="page-link" href="/neurlap/search/">Search</a><a class="page-link" href="/neurlap/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Tf.estimator, a Tensorflow High-level API</h1><p class="page-description">Deep Dream is a computer vision program created by Google engineer Alex Mordvintsev which uses a convolutional neural network to find and enhance patterns in images via algorithmic pareidolia, thus creating a Dream-like hallucinogenic appearance in the deliberately over-processed images.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2019-09-14T00:00:00-05:00" itemprop="datePublished">
+        Sep 14, 2019
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/neurlap/categories/#markdown">markdown</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h3"><a href="#diving-into-deep-dream-using-tensorflow--towards-ai">Diving Into Deep Dream using Tensorflow | Towards AI</a></li>
+<li class="toc-entry toc-h2"><a href="#exploring-deep-dream-using-tensorflow-20">Exploring Deep Dream using Tensorflow 2.0</a></li>
+<li class="toc-entry toc-h2"><a href="#what-is-it">What is it?</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#some-images-which-is-generated-using-deep-dream">Some images which is generated using Deep Dream</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#how-does-it-work">How does it work?</a></li>
+<li class="toc-entry toc-h2"><a href="#let-us-create-our-first-simple-deep-dream">Let us create our first simple Deep Dream.</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#1-importing-all-dependencies">1. Importing all dependencies</a></li>
+<li class="toc-entry toc-h3"><a href="#2-prepare-the-feature-extraction-model">2. Prepare the feature extraction model</a></li>
+<li class="toc-entry toc-h3"><a href="#3-calculate-loss">3. Calculate loss</a></li>
+<li class="toc-entry toc-h3"><a href="#4-gradient-ascent">4. Gradient ascent</a></li>
+<li class="toc-entry toc-h3"><a href="#5-taking-it-up-an-octave">5. Taking it up an octave</a></li>
+<li class="toc-entry toc-h3"><a href="#refrences-tensorflows-official-documentaion">Refrences: Tensorflow’s official Documentaion</a></li>
+</ul>
+</li>
+</ul><h3 id="diving-into-deep-dream-using-tensorflow--towards-ai">
+<a class="anchor" href="#diving-into-deep-dream-using-tensorflow--towards-ai" aria-hidden="true"><span class="octicon octicon-link"></span></a>Diving Into Deep Dream using Tensorflow | <a href="https://towardsai.net">Towards AI</a>
+</h3>
+
+<h2 id="exploring-deep-dream-using-tensorflow-20">
+<a class="anchor" href="#exploring-deep-dream-using-tensorflow-20" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exploring Deep Dream using Tensorflow 2.0</h2>
+
+<p><img src="https://cdn-images-1.medium.com/max/2048/1*Lf4xTIYt1minBvceeAr69g.jpeg" alt="Deep Dream Using Tensorflow"></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*4W_ov8dmK4-qDCDpYLRuJA.jpeg" alt="My image which generated by Deep Dream."></p>
+
+<p>Whenever any person hears about Deep Learning or Neural Network the things which first come into their mind are that it’s used for Object Detection, Face Recognition, Natural Language Processing, and Speech Recognition.
+But Neural Network is also capable of generating images. And one of the state-of-the-art methods is called Deep Dream.</p>
+
+<h2 id="what-is-it">
+<a class="anchor" href="#what-is-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is it?</h2>
+
+<p>Deep Dream is a computer vision program created by Google engineer Alex Mordvintsev which uses a convolutional neural network to find and enhance patterns in images via algorithmic pareidolia, thus creating a Dream-like hallucinogenic appearance in the deliberately over-processed images.</p>
+
+<h3 id="some-images-which-is-generated-using-deep-dream">
+<a class="anchor" href="#some-images-which-is-generated-using-deep-dream" aria-hidden="true"><span class="octicon octicon-link"></span></a>Some images which is generated using Deep Dream</h3>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*3E2O-2ZlXHlqWzPxVTQWxA.jpeg" alt=""></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*KtXxRlN5vTIbYfA-SYm4tg.jpeg" alt=""></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*KncLstAsawToa3hTQiU1Kg.jpeg" alt=""></p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*AMI3rUyybuSEbMqm6pS8Lg.jpeg" alt=""></p>
+
+<h2 id="how-does-it-work">
+<a class="anchor" href="#how-does-it-work" aria-hidden="true"><span class="octicon octicon-link"></span></a>How does it work?</h2>
+
+<p>In simple terms, many levels of neural networks process the images input into the program. The artificial neurons are calculated and the weight of their sum processed through the roughly three-layered network: low, intermediate, and high-level layers. The lower levels are responsible for more basic edges, corners, and textures. By maximizing those levels, the picture would end up looking more like a Van Gogh. The higher levels are responsible for more detailed, hierarchical input like buildings and other elaborate objects. When the higher levels are maximized, the picture looks more like a jumbled Dali.</p>
+
+<h2 id="let-us-create-our-first-simple-deep-dream">
+<a class="anchor" href="#let-us-create-our-first-simple-deep-dream" aria-hidden="true"><span class="octicon octicon-link"></span></a>Let us create our first simple Deep Dream.</h2>
+
+<p>In this tutorial, we’re going to use Tensorflow 2.0 and we run it on Google Colab.
+In the following 6 steps, we’re going to build our first deep dream model.
+So let’s get started.</p>
+
+<h3 id="1-importing-all-dependencies">
+<a class="anchor" href="#1-importing-all-dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Importing all dependencies</h3>
+
+<p>Here we’re going to use Indian actress Deepika Padukone image and then preproccess it.</p>
+
+<iframe src="https://medium.com/media/d9acb142f51fb654054cbbcd7bc8e6fb" frameborder="0"></iframe>
+
+<iframe src="https://medium.com/media/23b6ce411bd9d0d9baaf15077236cd3e" frameborder="0"></iframe>
+
+<iframe src="https://medium.com/media/82302328e395c82fc1e57f97314fe6e5" frameborder="0"></iframe>
+
+<iframe src="https://medium.com/media/00f9fbc0468c6a95c52cc97e5343b65a" frameborder="0"></iframe>
+
+<p>output:-</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/3840/1*PqA_PdYHSnss9DnGBZrbVA.jpeg" alt=""></p>
+
+<h3 id="2-prepare-the-feature-extraction-model">
+<a class="anchor" href="#2-prepare-the-feature-extraction-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. Prepare the feature extraction model</h3>
+
+<p>Download and prepare a pre-trained image classification model. You will use InceptionV3 which is similar to the model originally used in DeepDream.
+The InceptionV3 architecture is quite large (for a graph of the model architecture see TensorFlow’s research repo). For DeepDream, the layers of interest are those where the convolutions are concatenated. There are 11 of these layers in InceptionV3, named ‘mixed0’ though ‘mixed10’. Using different layers will result in different dream-like images. Deeper layers respond to higher-level features (such as eyes and faces), while earlier layers respond to simpler features (such as edges, shapes, and textures). Feel free to experiment with the layers selected below, but keep in mind that deeper layers (those with a higher index) will take longer to train on since the gradient computation is deeper.</p>
+
+<iframe src="https://medium.com/media/832ee111f1ee6cd5f935acc7a6b41e49" frameborder="0"></iframe>
+
+<h3 id="3-calculate-loss">
+<a class="anchor" href="#3-calculate-loss" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. Calculate loss</h3>
+
+<p>The loss is the sum of the activations in the chosen layers. The loss is normalized at each layer so the contribution from larger layers does not outweigh smaller layers.</p>
+
+<iframe src="https://medium.com/media/aa0634118c16100b9d3c974531fe7122" frameborder="0"></iframe>
+
+<h3 id="4-gradient-ascent">
+<a class="anchor" href="#4-gradient-ascent" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. Gradient ascent</h3>
+
+<p>Once you have calculated the loss for the chosen layers, all that is left is to calculate the gradients with respect to the image and add them to the original image.
+Adding the gradients to the image enhances the patterns seen by the network. At each step, you will have created an image that increasingly excites the activations of certain layers in the network.</p>
+
+<iframe src="https://medium.com/media/74fb80290487c121b9adf17b484b76a9" frameborder="0"></iframe>
+
+<p>OUTPUT:-</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*y6cbbE35DhF3cYJGQvM3eg.png" alt=""></p>
+
+<h3 id="5-taking-it-up-an-octave">
+<a class="anchor" href="#5-taking-it-up-an-octave" aria-hidden="true"><span class="octicon octicon-link"></span></a>5. Taking it up an octave</h3>
+
+<p>Pretty good, but there are a few issues with this first attempt:
+ (a) The output is noisy (this could be addressed with a tf.image.total_variation loss).
+ (b)The image is low resolution.
+ (c)The patterns appear like they’re all happening at the same granularity.
+To overcome these issues we can perform the previous gradient ascent approach, then increase the size of the image (which is referred to as an octave), and repeat this process for multiple octaves.</p>
+
+<iframe src="https://medium.com/media/6f0593c03b631d42c639ba629b129baf" frameborder="0"></iframe>
+
+<p>OUTPUT:-</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*9Sl3gptaiSGcN2a3eebqsg.png" alt=""></p>
+
+<p>Hurray, we’ve just generated an image using Deep Dream.
+In, case you don’t like to code the Deep Dream algorithm manually but want to create images with Deep Dream then here is the solution.
+You can use DeepDreamGenerator.</p>
+
+<p>LINK:-
+<a href="https://deepdreamgenerator.com/"><strong>Deep Dream Generator</strong>
+<em>The technique is a much more advanced version of the original Deep Dream approach. It is capable of using its own…</em>deepdreamgenerator.com</a></p>
+
+<p>Note:- In the above example some lines of codes are not showing because in Medium the first 11 lines of GitHub gist are only displayed. So I strongly suggest you to download colab notebook(.ipnyb file) from my GitHub repo.</p>
+
+<p>Link of my Deep_Dream repo:-
+<a href="https://github.com/abhinavsp0730/Deep_Dream"><strong>abhinavsp0730/Deep_Dream</strong>
+<em>Deep Dream model of my Medium Blog. Contribute to abhinavsp0730/Deep_Dream development by creating an account on…</em>github.com</a></p>
+
+<h3 id="refrences-tensorflows-official-documentaion">
+<a class="anchor" href="#refrences-tensorflows-official-documentaion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Refrences: Tensorflow’s official Documentaion</h3>
+
+<p>Do you know what, you can hit the clap button 50 times in medium?
+If you like this blog, show some love by doing claps.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*HnhqbqJ1vlHFEZmO5oEtqQ.gif" alt=""></p>
+
+<p>THANK YOU.</p>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="abhinavsp0730/neurlap"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/neurlap/markdown/2019/09/14/Exploring-Deep-Dream-using-Tensorflow-2.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/neurlap/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/neurlap/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/neurlap/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/abhinavsp0730" title="abhinavsp0730"><svg class="svg-icon grey"><use xlink:href="/neurlap/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.linkedin.com/in/abhinav-prakash-706902171" title="abhinav-prakash-706902171"><svg class="svg-icon grey"><use xlink:href="/neurlap/assets/minima-social-icons.svg#linkedin"></use></svg></a></li><li><a rel="me" href="https://twitter.com/neurlap" title="neurlap"><svg class="svg-icon grey"><use xlink:href="/neurlap/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

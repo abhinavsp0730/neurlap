@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://abhinavsp0730.github.io/neurlap/feed.xml" rel="self" type="application/atom+xml" /><link href="https://abhinavsp0730.github.io/neurlap/" rel="alternate" type="text/html" /><updated>2020-05-13T06:18:45-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/feed.xml</id><title type="html">Abhinav Prakash</title><subtitle>An easy to use blogging platform with support for Jupyter Notebooks.</subtitle><entry><title type="html">TensorFlow callbacks in action</title><link href="https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html" rel="alternate" type="text/html" title="TensorFlow callbacks in action" /><published>2020-06-10T00:00:00-05:00</published><updated>2020-06-10T00:00:00-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION</id><content type="html" xml:base="https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html">&lt;h2 id=&quot;tensorflow-callbacks-in-action&quot;&gt;TensorFlow Callbacks in Action&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://abhinavsp0730.github.io/neurlap/feed.xml" rel="self" type="application/atom+xml" /><link href="https://abhinavsp0730.github.io/neurlap/" rel="alternate" type="text/html" /><updated>2020-05-13T06:19:19-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/feed.xml</id><title type="html">Abhinav Prakash</title><subtitle>An easy to use blogging platform with support for Jupyter Notebooks.</subtitle><entry><title type="html">TensorFlow callbacks in action</title><link href="https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html" rel="alternate" type="text/html" title="TensorFlow callbacks in action" /><published>2020-06-10T00:00:00-05:00</published><updated>2020-06-10T00:00:00-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION</id><content type="html" xml:base="https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html">&lt;h2 id=&quot;tensorflow-callbacks-in-action&quot;&gt;TensorFlow Callbacks in Action&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/4522/1*c5mBC2KTs0oQ_SRGnbtuLA.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -1275,4 +1275,114 @@ Prediction is &quot;Virginica&quot; (49.0%), expected &quot;Virginica&quot;
 &lt;p&gt;Do you know what, you can hit the clap button 50 times in medium?
 If you like this blog, show some love by doing claps.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*HnhqbqJ1vlHFEZmO5oEtqQ.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Tf.estimator, a Tensorflow High-level API</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://abhinavsp0730.github.io/neurlap/images/article1.png" /><media:content medium="image" url="https://abhinavsp0730.github.io/neurlap/images/article1.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*HnhqbqJ1vlHFEZmO5oEtqQ.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Tf.estimator, a Tensorflow High-level API</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://abhinavsp0730.github.io/neurlap/images/article1.png" /><media:content medium="image" url="https://abhinavsp0730.github.io/neurlap/images/article1.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Tf.estimator, a Tensorflow High-level API</title><link href="https://abhinavsp0730.github.io/neurlap/markdown/2019/09/14/Exploring-Deep-Dream-using-Tensorflow-2.html" rel="alternate" type="text/html" title="Tf.estimator, a Tensorflow High-level API" /><published>2019-09-14T00:00:00-05:00</published><updated>2019-09-14T00:00:00-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/markdown/2019/09/14/Exploring-Deep-Dream-using-Tensorflow-2</id><content type="html" xml:base="https://abhinavsp0730.github.io/neurlap/markdown/2019/09/14/Exploring-Deep-Dream-using-Tensorflow-2.html">&lt;h3 id=&quot;diving-into-deep-dream-using-tensorflow--towards-ai&quot;&gt;Diving Into Deep Dream using Tensorflow | &lt;a href=&quot;https://towardsai.net&quot;&gt;Towards AI&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h2 id=&quot;exploring-deep-dream-using-tensorflow-20&quot;&gt;Exploring Deep Dream using Tensorflow 2.0&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2048/1*Lf4xTIYt1minBvceeAr69g.jpeg&quot; alt=&quot;Deep Dream Using Tensorflow&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*4W_ov8dmK4-qDCDpYLRuJA.jpeg&quot; alt=&quot;My image which generated by Deep Dream.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Whenever any person hears about Deep Learning or Neural Network the things which first come into their mind are that it’s used for Object Detection, Face Recognition, Natural Language Processing, and Speech Recognition.
+But Neural Network is also capable of generating images. And one of the state-of-the-art methods is called Deep Dream.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-it&quot;&gt;What is it?&lt;/h2&gt;
+
+&lt;p&gt;Deep Dream is a computer vision program created by Google engineer Alex Mordvintsev which uses a convolutional neural network to find and enhance patterns in images via algorithmic pareidolia, thus creating a Dream-like hallucinogenic appearance in the deliberately over-processed images.&lt;/p&gt;
+
+&lt;h3 id=&quot;some-images-which-is-generated-using-deep-dream&quot;&gt;Some images which is generated using Deep Dream&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*3E2O-2ZlXHlqWzPxVTQWxA.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*KtXxRlN5vTIbYfA-SYm4tg.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*KncLstAsawToa3hTQiU1Kg.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*AMI3rUyybuSEbMqm6pS8Lg.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;how-does-it-work&quot;&gt;How does it work?&lt;/h2&gt;
+
+&lt;p&gt;In simple terms, many levels of neural networks process the images input into the program. The artificial neurons are calculated and the weight of their sum processed through the roughly three-layered network: low, intermediate, and high-level layers. The lower levels are responsible for more basic edges, corners, and textures. By maximizing those levels, the picture would end up looking more like a Van Gogh. The higher levels are responsible for more detailed, hierarchical input like buildings and other elaborate objects. When the higher levels are maximized, the picture looks more like a jumbled Dali.&lt;/p&gt;
+
+&lt;h2 id=&quot;let-us-create-our-first-simple-deep-dream&quot;&gt;Let us create our first simple Deep Dream.&lt;/h2&gt;
+
+&lt;p&gt;In this tutorial, we’re going to use Tensorflow 2.0 and we run it on Google Colab.
+In the following 6 steps, we’re going to build our first deep dream model.
+So let’s get started.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-importing-all-dependencies&quot;&gt;1. Importing all dependencies&lt;/h3&gt;
+
+&lt;p&gt;Here we’re going to use Indian actress Deepika Padukone image and then preproccess it.&lt;/p&gt;
+
+&lt;iframe src=&quot;https://medium.com/media/d9acb142f51fb654054cbbcd7bc8e6fb&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+
+&lt;iframe src=&quot;https://medium.com/media/23b6ce411bd9d0d9baaf15077236cd3e&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+
+&lt;iframe src=&quot;https://medium.com/media/82302328e395c82fc1e57f97314fe6e5&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+
+&lt;iframe src=&quot;https://medium.com/media/00f9fbc0468c6a95c52cc97e5343b65a&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;output:-&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/3840/1*PqA_PdYHSnss9DnGBZrbVA.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-prepare-the-feature-extraction-model&quot;&gt;2. Prepare the feature extraction model&lt;/h3&gt;
+
+&lt;p&gt;Download and prepare a pre-trained image classification model. You will use InceptionV3 which is similar to the model originally used in DeepDream.
+The InceptionV3 architecture is quite large (for a graph of the model architecture see TensorFlow’s research repo). For DeepDream, the layers of interest are those where the convolutions are concatenated. There are 11 of these layers in InceptionV3, named ‘mixed0’ though ‘mixed10’. Using different layers will result in different dream-like images. Deeper layers respond to higher-level features (such as eyes and faces), while earlier layers respond to simpler features (such as edges, shapes, and textures). Feel free to experiment with the layers selected below, but keep in mind that deeper layers (those with a higher index) will take longer to train on since the gradient computation is deeper.&lt;/p&gt;
+
+&lt;iframe src=&quot;https://medium.com/media/832ee111f1ee6cd5f935acc7a6b41e49&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+
+&lt;h3 id=&quot;3-calculate-loss&quot;&gt;3. Calculate loss&lt;/h3&gt;
+
+&lt;p&gt;The loss is the sum of the activations in the chosen layers. The loss is normalized at each layer so the contribution from larger layers does not outweigh smaller layers.&lt;/p&gt;
+
+&lt;iframe src=&quot;https://medium.com/media/aa0634118c16100b9d3c974531fe7122&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+
+&lt;h3 id=&quot;4-gradient-ascent&quot;&gt;4. Gradient ascent&lt;/h3&gt;
+
+&lt;p&gt;Once you have calculated the loss for the chosen layers, all that is left is to calculate the gradients with respect to the image and add them to the original image.
+Adding the gradients to the image enhances the patterns seen by the network. At each step, you will have created an image that increasingly excites the activations of certain layers in the network.&lt;/p&gt;
+
+&lt;iframe src=&quot;https://medium.com/media/74fb80290487c121b9adf17b484b76a9&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;OUTPUT:-&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*y6cbbE35DhF3cYJGQvM3eg.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;5-taking-it-up-an-octave&quot;&gt;5. Taking it up an octave&lt;/h3&gt;
+
+&lt;p&gt;Pretty good, but there are a few issues with this first attempt:
+ (a) The output is noisy (this could be addressed with a tf.image.total_variation loss).
+ (b)The image is low resolution.
+ (c)The patterns appear like they’re all happening at the same granularity.
+To overcome these issues we can perform the previous gradient ascent approach, then increase the size of the image (which is referred to as an octave), and repeat this process for multiple octaves.&lt;/p&gt;
+
+&lt;iframe src=&quot;https://medium.com/media/6f0593c03b631d42c639ba629b129baf&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;OUTPUT:-&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*9Sl3gptaiSGcN2a3eebqsg.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Hurray, we’ve just generated an image using Deep Dream.
+In, case you don’t like to code the Deep Dream algorithm manually but want to create images with Deep Dream then here is the solution.
+You can use DeepDreamGenerator.&lt;/p&gt;
+
+&lt;p&gt;LINK:-
+&lt;a href=&quot;https://deepdreamgenerator.com/&quot;&gt;&lt;strong&gt;Deep Dream Generator&lt;/strong&gt;
+&lt;em&gt;The technique is a much more advanced version of the original Deep Dream approach. It is capable of using its own…&lt;/em&gt;deepdreamgenerator.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Note:- In the above example some lines of codes are not showing because in Medium the first 11 lines of GitHub gist are only displayed. So I strongly suggest you to download colab notebook(.ipnyb file) from my GitHub repo.&lt;/p&gt;
+
+&lt;p&gt;Link of my Deep_Dream repo:-
+&lt;a href=&quot;https://github.com/abhinavsp0730/Deep_Dream&quot;&gt;&lt;strong&gt;abhinavsp0730/Deep_Dream&lt;/strong&gt;
+&lt;em&gt;Deep Dream model of my Medium Blog. Contribute to abhinavsp0730/Deep_Dream development by creating an account on…&lt;/em&gt;github.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;refrences-tensorflows-official-documentaion&quot;&gt;Refrences: Tensorflow’s official Documentaion&lt;/h3&gt;
+
+&lt;p&gt;Do you know what, you can hit the clap button 50 times in medium?
+If you like this blog, show some love by doing claps.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*HnhqbqJ1vlHFEZmO5oEtqQ.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;THANK YOU.&lt;/p&gt;</content><author><name></name></author><summary type="html">Diving Into Deep Dream using Tensorflow | Towards AI</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://abhinavsp0730.github.io/neurlap/images/article2.jpeg" /><media:content medium="image" url="https://abhinavsp0730.github.io/neurlap/images/article2.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
