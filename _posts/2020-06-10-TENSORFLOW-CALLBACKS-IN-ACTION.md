@@ -1,4 +1,10 @@
-
+---
+toc: true
+layout: post
+description: A minimal example of using markdown with fastpages.
+categories: [markdown]
+title: TensorFlow callbacks in action
+---
 ## TensorFlow Callbacks in Action
 
 ![](https://cdn-images-1.medium.com/max/4522/1*c5mBC2KTs0oQ_SRGnbtuLA.jpeg)
