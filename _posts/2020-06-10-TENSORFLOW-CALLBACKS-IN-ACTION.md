@@ -1,5 +1,7 @@
 ---
 toc: true
+comments: true
+image: images/PicsArt_05-10-12.13.02.jpg
 layout: post
 description: In this article, we’re going to cover some of the essential TensorFlow callbacks and how to use them to have full control over the training.
 categories: [markdown]
