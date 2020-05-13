@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://abhinavsp0730.github.io/neurlap/feed.xml" rel="self" type="application/atom+xml" /><link href="https://abhinavsp0730.github.io/neurlap/" rel="alternate" type="text/html" /><updated>2020-05-13T10:44:51-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/feed.xml</id><title type="html">Abhinav Prakash</title><subtitle>An easy to use blogging platform with support for Jupyter Notebooks.</subtitle><entry><title type="html">TensorFlow callbacks in action</title><link href="https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html" rel="alternate" type="text/html" title="TensorFlow callbacks in action" /><published>2020-06-10T00:00:00-05:00</published><updated>2020-06-10T00:00:00-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION</id><content type="html" xml:base="https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html">&lt;h2 id=&quot;tensorflow-callbacks-in-action&quot;&gt;TensorFlow Callbacks in Action&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://abhinavsp0730.github.io/neurlap/feed.xml" rel="self" type="application/atom+xml" /><link href="https://abhinavsp0730.github.io/neurlap/" rel="alternate" type="text/html" /><updated>2020-05-13T10:47:31-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/feed.xml</id><title type="html">Abhinav Prakash</title><subtitle>An easy to use blogging platform with support for Jupyter Notebooks.</subtitle><entry><title type="html">TensorFlow callbacks in action</title><link href="https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html" rel="alternate" type="text/html" title="TensorFlow callbacks in action" /><published>2020-06-10T00:00:00-05:00</published><updated>2020-06-10T00:00:00-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION</id><content type="html" xml:base="https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html">&lt;h2 id=&quot;tensorflow-callbacks-in-action&quot;&gt;TensorFlow Callbacks in Action&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/4522/1*c5mBC2KTs0oQ_SRGnbtuLA.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -534,4 +534,88 @@ If you like this blog, show some love by doing claps.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*HnhqbqJ1vlHFEZmO5oEtqQ.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;THANK YOU.&lt;/p&gt;</content><author><name></name></author><summary type="html">Diving Into Deep Dream using Tensorflow | Towards AI</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://abhinavsp0730.github.io/neurlap/images/article2.jpeg" /><media:content medium="image" url="https://abhinavsp0730.github.io/neurlap/images/article2.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+&lt;p&gt;THANK YOU.&lt;/p&gt;</content><author><name></name></author><summary type="html">Diving Into Deep Dream using Tensorflow | Towards AI</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://abhinavsp0730.github.io/neurlap/images/article2.jpeg" /><media:content medium="image" url="https://abhinavsp0730.github.io/neurlap/images/article2.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">How to Use scikit-learn ‘eli5’ Library to Compute Permutation Importance?</title><link href="https://abhinavsp0730.github.io/neurlap/markdown/2019/07/07/How-to-Use-scikit-learn-eli5-Library-to-Compute-Permutation-Importance.html" rel="alternate" type="text/html" title="How to Use scikit-learn ‘eli5’ Library to Compute Permutation Importance?" /><published>2019-07-07T00:00:00-05:00</published><updated>2019-07-07T00:00:00-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/markdown/2019/07/07/How-to-Use-scikit-learn-eli5-Library-to-Compute-Permutation-Importance</id><content type="html" xml:base="https://abhinavsp0730.github.io/neurlap/markdown/2019/07/07/How-to-Use-scikit-learn-eli5-Library-to-Compute-Permutation-Importance.html">&lt;h3 id=&quot;feature-permutation-importance-with-eli5--towards-ai&quot;&gt;Feature Permutation Importance with ‘eli5’ | &lt;a href=&quot;https://towardsai.net/&quot;&gt;Towards AI&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h2 id=&quot;how-to-use-scikit-learn-eli5-library-to-compute-permutation-importance&quot;&gt;How to Use scikit-learn ‘eli5’ Library to Compute Permutation Importance?&lt;/h2&gt;
+
+&lt;h3 id=&quot;understanding-the-workings-of-scikit-learns-eli5-library-to-compute-feature-importance-on-a-sample-housing-dataset-and-interpreting-its-results&quot;&gt;Understanding the workings of scikit-learn’s ‘eli5’ library to compute feature importance on a sample housing dataset and interpreting its results&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*U1LPRoodN_CLmwq2SnFhPQ.jpeg&quot; alt=&quot;cc: Forbes&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Most of the Data Scientist(ML guys) treat their machine learning model as a black-box. They don’t know what are the things which are happening underhood.
+ They load their data, do manual data cleaning &amp;amp; prepare their data to fit it on ml modal. Then the train their model &amp;amp; predict the target values(regression problem).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;But they don’t know, what features does their model think are important?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*TBnt_U1s-X_f9Eham_plCQ.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For answering the above question Permutation Importance comes into the picture.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-it&quot;&gt;What is it?&lt;/h2&gt;
+
+&lt;p&gt;Permutation Importance is an algorithm that computes importance scores
+for each of the feature variables of a dataset,
+The importance measures are determined by computing the sensitivity of a model to random permutations of feature values.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-does-it-work&quot;&gt;How does it work?&lt;/h2&gt;
+
+&lt;p&gt;The concept is really straightforward: 
+We measure the importance of a feature by calculating the increase in the model’s prediction error after permuting the feature. 
+A feature is “important” if shuffling its values increases the model error because in this case, the model relied on the feature for the prediction.
+A feature is “unimportant” if shuffling its values leave the model error unchanged because in this case, the model ignored the feature for the prediction.&lt;/p&gt;
+
+&lt;h2 id=&quot;should-i-compute-importance-on-training-or-test-datavalidation-data&quot;&gt;Should I compute importance on Training or Test data(validation data)?&lt;/h2&gt;
+
+&lt;p&gt;The answer to this question is, we always measure permutation importance on test data.
+ permutation importance based on training data is garbage. The permutation importance based on training data makes us mistakenly believe that features are important for the predictions when in reality the model was just overfitting and the features were not important at all.&lt;/p&gt;
+
+&lt;h2 id=&quot;eli5--a-scikit-learn-library-&quot;&gt;eli5 — a scikit-learn library:-&lt;/h2&gt;
+
+&lt;p&gt;eli5 is a scikit learn library, used for computing permutation importance.&lt;/p&gt;
+
+&lt;h3 id=&quot;caution-to-take-before-using-eli5-&quot;&gt;caution to take before using eli5:-&lt;/h3&gt;
+
+&lt;p&gt;**1. **Permutation Importance is calculated after a model has been fitted.&lt;/p&gt;
+
+&lt;p&gt;**2. **We always compute permutation importance on test data(Validation Data).&lt;/p&gt;
+
+&lt;p&gt;**3. **The output of eli5 is in HTML format. So, we can only use it in the ipython notebook(i.e Jupiter notebook, google collab &amp;amp; kaggle kernel, etc).&lt;/p&gt;
+
+&lt;h2 id=&quot;now-let-us-get-some-test-of-codes-&quot;&gt;Now, let us get some test of codes 😋&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*FKiXevC6N5GwuurghctByw.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve built a rudimentary model(RandomForestRegressor) to predict the sale price of the housing data set.
+ This is a good dataset example for showing the Permutation Importance because this dataset has a lot of features.
+So, we can see which features make an impact while predicting the values and which are not.&lt;/p&gt;
+
+&lt;iframe src=&quot;https://medium.com/media/403caf5e064b28b365194f1d03ecf74d&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;em&gt;Now, we use the ‘eli5’ library to calculate Permutation importance.&lt;/em&gt;&lt;/p&gt;
+
+&lt;iframe src=&quot;https://medium.com/media/91c8acade31aa861b8d5e1be98f37473&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;em&gt;you can see the output of the above code below:-&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*8uCcJc3BZrJ1QdIGXPpXDQ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;interpreting-results-&quot;&gt;Interpreting Results:-&lt;/h2&gt;
+
+&lt;p&gt;Features have decreasing importance in top-down order. 
+The first number in each row shows the reduction in model performance by the reshuffle of that feature. 
+The second number is a measure of the randomness of the performance reduction for different reshuffles of the feature column. 
+ overallQual(overall quality) feature of the housing data set makes the biggest impact in the model while predicting the Sale Price.&lt;/p&gt;
+
+&lt;h3 id=&quot;you-can-get-the-housing-data-set-in-csv-format-from-my-github-profile&quot;&gt;&lt;em&gt;You can get the housing-data set in .csv format from my GitHub profile&lt;/em&gt;&lt;/h3&gt;
+&lt;p&gt;LINK:- &lt;a href=&quot;https://github.com/abhinavsp0730/housing_data/blob/master/home-data-for-ml-course.zip&quot;&gt;https://github.com/abhinavsp0730/housing_data/blob/master/home-data-for-ml-course.zip&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;you-can-also-get-ipnyb-filekaggle-kernel-file-from-my-github-profile&quot;&gt;You can also get .ipnyb file(kaggle Kernel) file from my GitHub profile&lt;/h3&gt;
+&lt;p&gt;LINK:-&lt;/p&gt;
+
+&lt;h3 id=&quot;httpsgithubcomabhinavsp0730housing_datablobmasterkernel659579854a2ipynb&quot;&gt;&lt;a href=&quot;https://github.com/abhinavsp0730/housing_data/blob/master/kernel659579854a(2).ipynb&quot;&gt;https://github.com/abhinavsp0730/housing_data/blob/master/kernel659579854a(2).ipynb&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id=&quot;thank-you&quot;&gt;THANK YOU&lt;/h3&gt;
+
+&lt;h3 id=&quot;if-you-enjoy-my-article-then-do-claps-and-follow-me-️&quot;&gt;If you enjoy my article then do claps and follow me ❤️.&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*HnhqbqJ1vlHFEZmO5oEtqQ.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Feature Permutation Importance with ‘eli5’ | Towards AI</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://abhinavsp0730.github.io/neurlap/images/article3.jpeg" /><media:content medium="image" url="https://abhinavsp0730.github.io/neurlap/images/article3.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
