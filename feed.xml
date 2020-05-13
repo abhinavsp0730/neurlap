@@ -1,4 +1,244 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://abhinavsp0730.github.io/neurlap/feed.xml" rel="self" type="application/atom+xml" /><link href="https://abhinavsp0730.github.io/neurlap/" rel="alternate" type="text/html" /><updated>2020-05-13T06:04:43-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/feed.xml</id><title type="html">Abhinav Prakash</title><subtitle>An easy to use blogging platform with support for Jupyter Notebooks.</subtitle><entry><title type="html">TensorFlow callbacks in action</title><link href="https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html" rel="alternate" type="text/html" title="TensorFlow callbacks in action" /><published>2020-06-10T00:00:00-05:00</published><updated>2020-06-10T00:00:00-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION</id><content type="html" xml:base="https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html">&lt;h2 id=&quot;tensorflow-callbacks-in-action&quot;&gt;TensorFlow Callbacks in Action&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://abhinavsp0730.github.io/neurlap/feed.xml" rel="self" type="application/atom+xml" /><link href="https://abhinavsp0730.github.io/neurlap/" rel="alternate" type="text/html" /><updated>2020-05-13T06:08:33-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/feed.xml</id><title type="html">Abhinav Prakash</title><subtitle>An easy to use blogging platform with support for Jupyter Notebooks.</subtitle><entry><title type="html">Tf.estimator, a Tensorflow High-level API</title><link href="https://abhinavsp0730.github.io/neurlap/markdown/2020/09/07/Tf.estimator-a-Tensorflow-High-level-API.html" rel="alternate" type="text/html" title="Tf.estimator, a Tensorflow High-level API" /><published>2020-09-07T00:00:00-05:00</published><updated>2020-09-07T00:00:00-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/markdown/2020/09/07/Tf.estimator-a-Tensorflow-High-level-API</id><content type="html" xml:base="https://abhinavsp0730.github.io/neurlap/markdown/2020/09/07/Tf.estimator-a-Tensorflow-High-level-API.html">&lt;h2 id=&quot;tfestimator-a-tensorflow-high-level-api&quot;&gt;Tf.estimator, a Tensorflow High-level API&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2460/1*FyA1WjY8wC4p5eIt43jTHA.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now Tensorflow 2.0 has been officially released and it’s having two high-level deep learning APIs.
+The first one is tf.keras and another one is tf.estimator. You can see the list of TensorFlow’s Python API in the picture above. Some of you are familiar with building an ML model using Keras. But we’re not so familiar with tf.estimator (Assuming we refer to a beginner in ML).
+So let us understand tf.estimator.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-context-of-this-article-is&quot;&gt;The context of this article is:&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Giving you an idea about what tf.estimator is all about.
+2.What tasks we’ve to follow while writing the TensorFlow program based on Estimators(pre-made Estimators).&lt;/li&gt;
+    &lt;li&gt;Advantages .
+4.Estimators capabilities.&lt;/li&gt;
+    &lt;li&gt;We’re going to build and test a model by using tf.estimator that classifies iris flowers into there species.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;what-is-tfestimator&quot;&gt;What is tf.estimator?&lt;/h2&gt;
+
+&lt;p&gt;An Estimator is TensorFlow’s high-level representation of a complete model, and it has been designed for easy scaling and asynchronous training. It’s used to train the neural network model and use them to predict new data. It’s a high-level API that sits on top of the low-level core TensorFlow API.
+One can use a pre-made estimator or custom estimator.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-pre-made-estimators&quot;&gt;1. Pre-made Estimators&lt;/h3&gt;
+
+&lt;p&gt;Pre-made Estimators enable you to work at a much higher conceptual level than the base TensorFlow APIs. You no longer have to worry about creating the computational graph or sessions since Estimators handle all the “plumbing” for you. Furthermore, pre-made Estimators let you experiment with different model architectures by making only minimal code changes. tf.estimator. DNNClassifier, for example, is a pre-made Estimator class that trains classification models based on dense, feed-forward neural networks.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-custom-estimator&quot;&gt;2. Custom estimator&lt;/h3&gt;
+
+&lt;p&gt;The heart of every Estimator — whether pre-made or custom — is its model function, which is a method that builds graphs for training, evaluation, and prediction. When you are using a pre-made Estimator, someone else has already implemented the model function. When relying on a custom Estimator, you must write the model function yourself.
+In this model, we’re mainly dealing with pre-made estimators&lt;/p&gt;
+
+&lt;h2 id=&quot;tasks-for-writing-tensorflow-pre-made-estimators&quot;&gt;Tasks for writing TensorFlow pre-made estimators.&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2124/1*cv-u3ZwrOYiYlGzh1Yhz0g.png&quot; alt=&quot;Source. [https://torres.ai](https://torres.ai)&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;1.Create one or more input functions.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Define the model’s feature columns.&lt;/li&gt;
+    &lt;li&gt;Instantiate an Estimator, specifying the feature columns and various hyperparameters.&lt;/li&gt;
+    &lt;li&gt;Call one or more methods on the Estimator object, passing the appropriate input function as the source of the data.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Later in this article, we’re going to implement the above tasks for iris classification.&lt;/p&gt;
+
+&lt;h2 id=&quot;advantages&quot;&gt;Advantages&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;h1 id=&quot;the-tfestimator-provides-some-capabilities-currently-still-under-development-for-tfkeras&quot;&gt;The tf.estimator provides some capabilities currently still under development for tf.keras.&lt;/h1&gt;
+  &lt;p&gt;#These are:-
+#1.We can conduct distributed training across multiple servers with the Estimators API
+#2.Full TFX integration.
+#TensorFlow Extended (TFX) is an end-to-end platform for deploying production ML pipelines. The tf.estimator is supported for fully TFX integration.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;estimators-capabilities&quot;&gt;Estimators capabilities&lt;/h2&gt;
+
+&lt;p&gt;Estimators provide the following benefits:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;You can run Estimator-based models on a localhost or a distributed multi-server environment without changing your model. Furthermore, you can run Estimator-based models on CPUs, GPUs, or TPUs without recoding your model.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Estimators provide a safely distributed training loop that controls how and when to:
+ (a)load data
+ (b)handle exceptions
+ ©create checkpoint files and recover from failures
+ (d)save summaries for TensorBoard&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;iris-classifier-using-tfestimator&quot;&gt;Iris classifier using tf.estimator&lt;/h2&gt;
+
+&lt;p&gt;We’re going to build an iris classifier using tf.estimator. The dataset we’re using is iris data set which is having four features sepal length, sepal width, petal length &amp;amp; petal width and three labels Setosa, Versicolor &amp;amp; Virginica.
+But first, we import all the dependencies&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;from __future__ import absolute_import, division, print_function, unicode_literals
+
+
+import tensorflow as tf
+
+import pandas as pd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And then we preprocess the data to perform the following task:-&lt;/p&gt;
+
+&lt;p&gt;(a)Create one or more input functions.
+ (b)Define the model’s feature columns.
+ (c )Instantiate an Estimator, specifying the feature columns and various hyperparameters.
+ (d)Call one or more methods on the Estimator object, passing the appropriate input function as the source of the data.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Preprocessing the data&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CSV_COLUMN_NAMES = ['SepalLength', 'SepalWidth', 'PetalLength', 'PetalWidth', 'Species']
+SPECIES = ['Setosa', 'Versicolor', 'Virginica']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Downloading the data set.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;train_path = tf.keras.utils.get_file(
+    &quot;iris_training.csv&quot;, &quot;https://storage.googleapis.com/download.tensorflow.org/data/iris_training.csv&quot;)
+test_path = tf.keras.utils.get_file(
+    &quot;iris_test.csv&quot;, &quot;https://storage.googleapis.com/download.tensorflow.org/data/iris_test.csv&quot;)
+
+train = pd.read_csv(train_path, names=CSV_COLUMN_NAMES, header=0)
+test = pd.read_csv(test_path, names=CSV_COLUMN_NAMES, header=0)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;creating-an-input-function&quot;&gt;Creating an input function&lt;/h3&gt;
+
+&lt;p&gt;You must create input functions to supply data for training, evaluating, and prediction.&lt;/p&gt;
+
+&lt;p&gt;An input function is a function that returns a tf.data.Dataset object which outputs the following two-element tuple:&lt;/p&gt;
+
+&lt;p&gt;features — A Python dictionary in which:
+ (a)Each key is the name of a feature.
+ (b)Each value is an array containing all of that feature’s values.
+ label — An array containing the values of the label for every example.
+We’re using pandas for building input pipeline&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def input_fn(features, labels, training=True, batch_size=256):
+    &quot;&quot;&quot;An input function for training or evaluating&quot;&quot;&quot;
+    # Convert the inputs to a Dataset.
+    dataset = tf.data.Dataset.from_tensor_slices((dict(features), labels))
+
+    # Shuffle and repeat if you are in training mode.
+    if training:
+        dataset = dataset.shuffle(1000).repeat()
+    
+    return dataset.batch(batch_size)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;define-the-feature-columns&quot;&gt;Define the feature columns&lt;/h3&gt;
+
+&lt;p&gt;A feature column is an object describing how the model should use raw input data from the features dictionary. When you build an Estimator model, we pass it a list of feature columns that describe each of the features you want the model to use. The tf.feature_column module provides many options for representing data to the model.&lt;/p&gt;
+
+&lt;p&gt;For Iris, the 4 raw features are numeric values, so we’ll build a list of feature columns to tell the Estimator model to represent each of the four features as 32-bit floating-point values. Therefore, the code to create the feature column is:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Feature columns describe how to use the input.
+my_feature_columns = []
+for key in train.keys():
+    my_feature_columns.append(tf.feature_column.numeric_column(key=key))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;instantiate-an-estimator&quot;&gt;Instantiate an estimator&lt;/h2&gt;
+
+&lt;p&gt;The Iris problem is a classic classification problem. Fortunately, TensorFlow provides several pre-made classifier Estimators, including:&lt;/p&gt;
+
+&lt;p&gt;a. tf.estimator.DNNClassifier for deep models that perform multi-class classification.
+ b. tf.estimator.DNNLinearCombinedClassifier for wide &amp;amp; deep models.
+ c. tf.estimator.LinearClassifier for classifiers based on linear models.&lt;/p&gt;
+
+&lt;p&gt;For the Iris problem, tf.estimator.DNNClassifier seems like the best choice. Here’s how we instantiated this Estimator:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Build a DNN with 2 hidden layers with 30 and 10 hidden nodes each.
+classifier = tf.estimator.DNNClassifier(
+    feature_columns=my_feature_columns,
+    # Two hidden layers of 10 nodes each.
+    hidden_units=[30, 10],
+    # The model must choose between 3 classes.
+    n_classes=3)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;train-evaluate-and-predict&quot;&gt;Train, Evaluate, and Predict&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;Train the model&lt;/em&gt;
+Train the model by calling the Estimator’s train method as follows:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Train the Model.
+classifier.train(
+    input_fn=lambda: input_fn(train, train_y, training=True),
+    steps=5000)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Evaluate&lt;/p&gt;
+
+&lt;p&gt;Now that the model has been trained, you can get some statistics on its performance. The following code block evaluates the accuracy of the trained model on the test data:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;eval_result = classifier.evaluate(
+    input_fn=lambda: input_fn(test, test_y, training=False))
+
+print('\nTest set accuracy: {accuracy:0.3f}\n'.format(**eval_result))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;After evaluating it we’ll get an accuracy of about 56%&lt;/p&gt;
+
+&lt;h3 id=&quot;making-predictions-inferring-from-the-trained-model&quot;&gt;Making predictions (inferring) from the trained model&lt;/h3&gt;
+
+&lt;p&gt;You now have a trained model that produces good evaluation results. You can now use the trained model to predict the species of an Iris flower based on some unlabeled measurements. As with training and evaluation, you make predictions using a single function call:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Generate predictions from the model
+expected = ['Setosa', 'Versicolor', 'Virginica']
+predict_x = {
+    'SepalLength': [5.1, 5.9, 6.9],
+    'SepalWidth': [3.3, 3.0, 3.1],
+    'PetalLength': [1.7, 4.2, 5.4],
+    'PetalWidth': [0.5, 1.5, 2.1],
+}
+
+def input_fn(features, batch_size=256):
+    &quot;&quot;&quot;An input function for prediction.&quot;&quot;&quot;
+    # Convert the inputs to a Dataset without labels.
+    return tf.data.Dataset.from_tensor_slices(dict(features)).batch(batch_size)
+
+predictions = classifier.predict(
+    input_fn=lambda: input_fn(predict_x))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The predict method returns a Python iterable, yielding a dictionary of prediction results for each example. The following code prints a few predictions and their probabilities:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for pred_dict, expec in zip(predictions, expected):
+    class_id = pred_dict['class_ids'][0]
+    probability = pred_dict['probabilities'][class_id]
+
+    print('Prediction is &quot;{}&quot; ({:.1f}%), expected &quot;{}&quot;'.format(
+        SPECIES[class_id], 100 * probability, expec))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We’ll get an output like this&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Graph was finalized.
+INFO:tensorflow:Restoring parameters from /tmp/tmpy5w5zoj8/model.ckpt-5000
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+Prediction is &quot;Setosa&quot; (73.0%), expected &quot;Setosa&quot;
+Prediction is &quot;Virginica&quot; (42.6%), expected &quot;Versicolor&quot;
+Prediction is &quot;Virginica&quot; (49.0%), expected &quot;Virginica&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;refrences--tensorflows-official-documentation&quot;&gt;Refrences:- Tensorflow’s official Documentation&lt;/h3&gt;
+
+&lt;p&gt;Hope you like this article&lt;/p&gt;
+
+&lt;p&gt;Do you know what, you can hit the clap button 50 times in medium?
+If you like this blog, show some love by doing claps.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*HnhqbqJ1vlHFEZmO5oEtqQ.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Tf.estimator, a Tensorflow High-level API</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://abhinavsp0730.github.io/neurlap/images/article1.png" /><media:content medium="image" url="https://abhinavsp0730.github.io/neurlap/images/article1.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">TensorFlow callbacks in action</title><link href="https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html" rel="alternate" type="text/html" title="TensorFlow callbacks in action" /><published>2020-06-10T00:00:00-05:00</published><updated>2020-06-10T00:00:00-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION</id><content type="html" xml:base="https://abhinavsp0730.github.io/neurlap/markdown/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html">&lt;h2 id=&quot;tensorflow-callbacks-in-action&quot;&gt;TensorFlow Callbacks in Action&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/4522/1*c5mBC2KTs0oQ_SRGnbtuLA.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
