@@ -4,11 +4,11 @@ title: Projects
 permalink: /project/
 ---
 # This page contains all of my Projects
+* ###  Project Antivenom
 <iframe class="youtube" 
 src="https://youtube.com/embed/yQ-4SiZxMNM"
 width="560" height="315" >
 </iframe>
-* ###  Project Antivenom
   Project AntiVenom is an innovative idea of bringing technology into the aid of human problems.
   Currently, region-specific for the Indian state of Odisha, this project aims at improving the disastrous situation between humans and snake
   There is no pre-made snake dataset present on the internet. So I’ve prepared the dataset. Then I performed transfer learning using tensorflow 2.0 and its high-level API keras  and using mobile net model due to its lightweight nature. Then this model is able to classify the snake’s breed and whether it’s venomous or not. Then using Tensorflow Lite I  served this model into android for production.\
