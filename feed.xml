@@ -1,4 +1,190 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://abhinavsp0730.github.io/neurlap/feed.xml" rel="self" type="application/atom+xml" /><link href="https://abhinavsp0730.github.io/neurlap/" rel="alternate" type="text/html" /><updated>2020-05-13T03:31:50-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/feed.xml</id><title type="html">Abhinav Prakash</title><subtitle>An easy to use blogging platform with support for Jupyter Notebooks.</subtitle><entry><title type="html">Fastpages Notebook Blog Post</title><link href="https://abhinavsp0730.github.io/neurlap/jupyter/2020/02/20/test.html" rel="alternate" type="text/html" title="Fastpages Notebook Blog Post" /><published>2020-02-20T00:00:00-06:00</published><updated>2020-02-20T00:00:00-06:00</updated><id>https://abhinavsp0730.github.io/neurlap/jupyter/2020/02/20/test</id><content type="html" xml:base="https://abhinavsp0730.github.io/neurlap/jupyter/2020/02/20/test.html">&lt;!--
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://abhinavsp0730.github.io/neurlap/feed.xml" rel="self" type="application/atom+xml" /><link href="https://abhinavsp0730.github.io/neurlap/" rel="alternate" type="text/html" /><updated>2020-05-13T04:39:22-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/feed.xml</id><title type="html">Abhinav Prakash</title><subtitle>An easy to use blogging platform with support for Jupyter Notebooks.</subtitle><entry><title type="html">Tensorflow Callbacks In Action</title><link href="https://abhinavsp0730.github.io/neurlap/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html" rel="alternate" type="text/html" title="Tensorflow Callbacks In Action" /><published>2020-06-10T00:00:00-05:00</published><updated>2020-06-10T00:00:00-05:00</updated><id>https://abhinavsp0730.github.io/neurlap/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION</id><content type="html" xml:base="https://abhinavsp0730.github.io/neurlap/2020/06/10/TENSORFLOW-CALLBACKS-IN-ACTION.html">&lt;h2 id=&quot;tensorflow-callbacks-in-action&quot;&gt;TensorFlow Callbacks in Action&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/4522/1*c5mBC2KTs0oQ_SRGnbtuLA.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In layman terms, if I want to introduce callbacks, then it’s the controller by which you can control your plane. Without these controllers, you’re not having any control over the plane, and you’ll crash.&lt;/p&gt;
+
+&lt;p&gt;Callbacks: from keras.io, a callback is an object that can perform actions at various stages of training (e.g., at the start or end of an epoch, before or after a single batch, etc.).&lt;/p&gt;
+
+&lt;p&gt;It means that callbacks are the functions by which you can perform a particular task during the training
+process of your model. 
+So, what can you do with these callbacks?&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;You can perform a particular task after the starting and ending of the training/batch/ epochs.&lt;/li&gt;
+  &lt;li&gt;You can periodically save the model states in the disk.&lt;/li&gt;
+  &lt;li&gt;You can schedule the learning rate as per your task.&lt;/li&gt;
+  &lt;li&gt;You can automatically stop the training when a particular condition becomes True.&lt;/li&gt;
+  &lt;li&gt;And you can do anything during the training process by subclassing these callbacks.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;For example, you can make your training output clean and colorful like this, pretty awesome, right?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2974/1*RnOcxRCIhX7gtX7nv9RdGQ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Tensorflow provides a wide range of callbacks under the base class “tf.keras.callbacks. “For the full list of callbacks please visit &lt;a href=&quot;https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/Callback&quot;&gt;TensorFlow’s website&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In this article, we’re going to cover some of the essential TensorFlow callbacks and how to use them to have full control over the training.&lt;/p&gt;
+
+&lt;p&gt;The context of this article are:-&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;custom callbacks by subclassing callback class.&lt;/li&gt;
+  &lt;li&gt;Early stopping callback.&lt;/li&gt;
+  &lt;li&gt;Model checkpoint callback.&lt;/li&gt;
+  &lt;li&gt;ReduceOnPlateu callback.&lt;/li&gt;
+  &lt;li&gt;Learning rate Scheduler.&lt;/li&gt;
+  &lt;li&gt;Bonus package for making the output clean and colorful, as shown above.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;But let’s first load the cats_vs_dogs dataset, I’ve been using the very small subclass of the original dataset. And then, let’s define our model architecture using sequential API. Throughout this article, I’m using this dataset and this model architecture.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2852/1*kSuHL1TUQ8R_m8W8HNSXuw.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/3976/1*pRCO7A6g-xN_Y_F08M_qyw.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2792/1*aLfWln5XjPiqy33oW6WuyQ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Note:- This article is all about the TensorFlow callbacks and not for making a world-class ML model and for achieving the state-of-art result. So, throughout this article, ignore the loss and the metrics and try to focus on how to use these callbacks. The dataset is minimal, and it may overfit, but you can ignore all these things.&lt;/p&gt;
+
+&lt;p&gt;So, without further delay, let’s start learning about the callbacks mentioned above.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-custom-callbacks-by-subclassing-callback-class&quot;&gt;1. Custom callbacks by subclassing callback class.&lt;/h2&gt;
+
+&lt;p&gt;These callbacks come under the base class “tf.keras.callbacks.”
+By subclassing these callbacks, we can perform certain functions when the training/batch/epochs have started or ended.
+For this, we can override the function of callback classes.
+The name of these functions is self explain their behavior.
+For example def on_train_begin(), this means what to do when
+training will begin.
+Let’s see below how to override these functions. We can
+also, monitor logs and perform certain actions, generally at 
+the starting or the ending of the training/batch/epochs.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/3636/1*RGOhsL79FZa8wj0lKlyqgg.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;output&quot;&gt;Output:&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/4096/1*w03z-RdHpES2_24NqZj17Q.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-earlystopping-callback&quot;&gt;2. EarlyStopping Callback.&lt;/h2&gt;
+
+&lt;p&gt;Suppose we don’t know about the callbacks, and you want to prevent the overfitting of the model caused by training our model into extra epochs(we’re not god so that we know at how many epochs our model is going to converge). So, we plot the val_loss vs. epochs graph and examine
+how many epochs it’s started overfitting the data. Then we’ll re-train our model in less than that epoch number.
+What if I’ll tell you don’t have to do this thing manually.
+Yes, you can do this by using EarlyStopping Callback.
+So, let’s see how one can use this callback.&lt;/p&gt;
+
+&lt;p&gt;First, import the callback, and then create the instance of the
+EarlyStopping callback and pass the arguments as per our needs.
+Lemme explain these arguements .&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;“monitor” you can pass the loss or the metric.
+Generally, we pass val_loss and monitor it.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;“min_delta” you can pass an integer in this argument.
+In simple words, you’re telling the callback that the model
+is not improving if it’s not decreasing more/less than the loss/metrics.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;“patience,” it means about how many epochs to wait.
+And after that, if there is no improvement seen in the
+model performance according to the value of “min delta,” then stop the training.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;“mode”
+By default it’s set to ‘auto’ this comes handy when
+you’re dealing with the custom loss/metric. So, you can 
+tell the callback whether the model is improving when
+its custom loss/metric is decreasing then set it to “min” 
+or increasing then set it to “max.”&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2556/1*AZnvwzjQZ9mwmQqRVqalRA.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-reducelronplateau&quot;&gt;3. ReduceLROnPlateau.&lt;/h2&gt;
+
+&lt;p&gt;This callback is used to reduce the learning rate if there is 
+not any improvement in the loss/metric.&lt;/p&gt;
+
+&lt;p&gt;The arguments are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;“monitor” it’s set to that loss/metric as a string
+ of which we are reducing the learning if it’ll not improve.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;“factor” You can pass an integer in this argument,
+and say your current learning rate is LR, then if
+there is not any improvement seen in the monitored loss/metric,
+then the learning is going to decrease by that “factor.”
+i.e new learning rate = lr * factor&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;“Verbose”
+You can set verbose =1 to see the learning rate at every epoch.
+Or verbose = 0 to disable it.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The argument min_delta and mode are the same as explained in the arguments of EarlyStopping Callback.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2724/1*MnHPbv6vcM7s5y9_0KNgPA.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4-modelcheckpoint&quot;&gt;4. ModelCheckpoint&lt;/h2&gt;
+
+&lt;p&gt;Let’s imagine you’re training a heavy model like Bert in colab,
+and it requires a lot of time for training. So, you started the model training and went for sleep. And then the next morning
+you wake up, and you open your colab.
+But you’ll see the “Runtime Disconnect” message on your screen.
+Sounds like a nightmare tough?
+For this problem, ModelCheckpoint comes as a savior in our life. We can save the checkpoints at the end of every epoch.
+So, that we can load the weights or resume the training if 
+something terrible happens while training.&lt;/p&gt;
+
+&lt;p&gt;So, let’s see how we can use this callback. We can save
+the model checkpoint in Keras h5/hd5 format or TensorFlow pb
+format. If you pass the argument “filepath= model.h5”(.h5 extension)
+it’ll be saved in the Keras format or “filepath= model.p”(.pb extension)
+for saving in the TensorFlow model format.&lt;/p&gt;
+
+&lt;p&gt;Also, there are two options to save the checkpoint either you can save the entire architecture+weights or just the weights. You can do this by setting “save_only_weights=True” or “save_only_weights=False”&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2928/1*vONkDZiWccWGODEcldupQQ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;5-learningratescheduler&quot;&gt;5. LearningRateScheduler&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The simplest way to schedule the learning is to decrease the learning rate 
+linearly from a large initial value to a small value. 
+This allows large weight changes at the beginning of the 
+the learning process and small changes or fine-tuning towards
+the end of the learning process.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Let’s see how to schedule the learning rate. For this, we have to
+define an auxiliary function that contains the rules for
+alternating the learning rate. 
+And then we can simply pass the name of this auxiliary function
+to the argument of the object of the LearningRateScheduler class.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/3736/1*SSwVhCH4nNh9YMVT2wpfFw.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;output-1&quot;&gt;Output:&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/4096/1*x9kGtMuAvqXEpbn00uNf_g.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;lastly here is the utility file to make training output cleaner and colorful.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2974/1*RnOcxRCIhX7gtX7nv9RdGQ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/abhinavsp0730/callback_blog&quot;&gt;Repository on Github&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;You can run all the code above on &lt;a href=&quot;https://colab.research.google.com/drive/1HRAt-ViaZW2BpwjY51rn64W3VBrTp-FI?usp=sharing&quot;&gt;Google’s colab&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">TensorFlow Callbacks in Action</summary></entry><entry><title type="html">Fastpages Notebook Blog Post</title><link href="https://abhinavsp0730.github.io/neurlap/jupyter/2020/02/20/test.html" rel="alternate" type="text/html" title="Fastpages Notebook Blog Post" /><published>2020-02-20T00:00:00-06:00</published><updated>2020-02-20T00:00:00-06:00</updated><id>https://abhinavsp0730.github.io/neurlap/jupyter/2020/02/20/test</id><content type="html" xml:base="https://abhinavsp0730.github.io/neurlap/jupyter/2020/02/20/test.html">&lt;!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
