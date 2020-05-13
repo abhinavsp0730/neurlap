@@ -16,6 +16,6 @@ I'm the co-organizer of PyData Bhubaneswar chapter. \
 🛠️ Construct Ai solution for your real-world problem. \
 🛠️ Interested In to build Ai solution for Health Care . \
 🛠️ Looking For internship and freelancing project. \
-🛠️ Drop an Email to abhinavsp0730@gmail.com for further discussion. \
+🛠️ Drop an Email to abhinavsp0730@gmail.com for further discussion. 
 
 
