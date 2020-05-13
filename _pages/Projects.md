@@ -5,7 +5,8 @@ permalink: /project/
 ---
 # This page contains all of my Projects
 <iframe class="youtube" 
-src="https://youtube.com/embed/yQ-4SiZxMNM">
+src="https://youtube.com/embed/yQ-4SiZxMNM"
+width="560" height="315" >
 </iframe>
 * ###  Project Antivenom
   Project AntiVenom is an innovative idea of bringing technology into the aid of human problems.
