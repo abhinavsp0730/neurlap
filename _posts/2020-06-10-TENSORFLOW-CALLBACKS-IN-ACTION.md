@@ -1,7 +1,7 @@
 ---
 toc: true
 layout: post
-description: A minimal example of using markdown with fastpages.
+description: In this article, we’re going to cover some of the essential TensorFlow callbacks and how to use them to have full control over the training.
 categories: [markdown]
 title: TensorFlow callbacks in action
 ---
