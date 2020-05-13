@@ -24,3 +24,4 @@ permalink: /project/
     * *Our Vision*\
     We believe that with the help of technology, every problem can be solved. Therefore, we want to innovate solutions which will help change the environment around us, and the world as a whole, one step at a time. We might be young, but we sure have the balls to make an impact.\
     [**Project Link**](https://xiken.tech/)
+    
