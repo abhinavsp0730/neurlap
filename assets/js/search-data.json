@@ -72,6 +72,17 @@
 
   
       ,"page2": {
+          "title": "Failures",
+          "content": "This page contains all the things in which I’ve put effort and got failed. . I believe that if you run from your failures then it’ll haunt you in your dreams. The only option to overcome your failure is to face it. . Failed at 2020 GSOC I’ve submitted three proposels in the orgainisation and got rejection in all of them. My projects are listed below: End-to-End colab examples, Adding more built-in tunable models and Documentations of Keras-tuner. | Implement a Time Series Pipeline Example using TFX( Colab Notebook + Live Website for forecasting via Tensorflow.js model) | Forward Mode Automatic Differentiation In TF, Example, And Documentation. | . | Not able to win VSSUT InnoBuzz hackathon 2020 | .",
+          "url": "https://abhinavsp0730.github.io/neurlap/failures/",
+          "relUrl": "/failures/",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page3": {
           "title": "Projects",
           "content": "This page contains all of my Projects . youtube: https://youtu.be/yQ-4SiZxMNM . Project Antivenom . Project AntiVenom is an innovative idea of bringing technology into the aid of human problems. Currently, region-specific for the Indian state of Odisha, this project aims at improving the disastrous situation between humans and snake There is no pre-made snake dataset present on the internet. So I’ve prepared the dataset. Then I performed transfer learning using tensorflow 2.0 and its high-level API keras and using mobile net model due to its lightweight nature. Then this model is able to classify the snake’s breed and whether it’s venomous or not. Then using Tensorflow Lite I served this model into android for production. Also, this project is featured in the newspaper: Link Android app Playstore link: Link Visit the website: Link . | Xiken.tech . About this Project An organization driven by young minds who don’t only focus on problems around us, but believe in the concept of “Innovate To Solve” | Our Mission With enthusiasm and compassion towards our planet and its people, we are not here just to complain about the problems, we are here to solve and simplify. Our projects will be for this world and its inhabitants, and as we proceed, we want to indulge as many people as we can into our mission. | Our Plan Beginning this journey of innovation, we will be launching “Project AntiVenom”. After which, similar projects with the motive of “Innovate to Solve” will follow. At the same time, we will be open to collaborations. Our projects will be open sourced, so that everyone who has the urge of “Innovate To Solve” can contribute. | Our Vision We believe that with the help of technology, every problem can be solved. Therefore, we want to innovate solutions which will help change the environment around us, and the world as a whole, one step at a time. We might be young, but we sure have the balls to make an impact. Project Link | . | .",
           "url": "https://abhinavsp0730.github.io/neurlap/project/",
@@ -82,7 +93,7 @@
   
 
   
-      ,"page3": {
+      ,"page4": {
           "title": "Tweets",
           "content": "twitter: https://twitter.com/jakevdp/status/1204765621767901185?s=20 .",
           "url": "https://abhinavsp0730.github.io/neurlap/tweets/",
@@ -93,7 +104,7 @@
   
 
   
-      ,"page4": {
+      ,"page5": {
           "title": "About Me",
           "content": "Give me the data and I’ll show you its true potential. I let computers see with the help of neural networks. I build End-to-End Machine Learning products. I know how to use data efficiently. Give me data and I’ll turn into them live projects. Helping humanity with the help of AI with this aim founded xiken.tech . I’m the lead of state-level project name ProjectAntivenom. I’m a speaker and a blogger who loves to help the community, who believes knowledge is of no use. if you don’t share and apply it. Reach out to me for spreading the knowledge of AI into your community events. I’m the co-organizer of PyData Bhubaneswar Chapter. ⚡⚡⚡⚡⚡ I’m open for internship opportunity and freelancing project ⚡⚡⚡⚡⚡⚡⚡⚡ 🛠️ Construct Ai solution for your real-world problem. 🛠️ Interested In to build Ai solution for Health Care . 🛠️ Looking For internship and freelancing project. 🛠️ Drop an Email to abhinavsp0730@gmail.com for further discussion. .",
           "url": "https://abhinavsp0730.github.io/neurlap/about/",
@@ -104,7 +115,7 @@
   
 
   
-      ,"page5": {
+      ,"page6": {
           "title": "Achievements",
           "content": "Got Featured in the Odisha’s biggest NewsPaper for my ProjectAntivenom . . | Became the Co-organiser of Py-Data BBSR . | Won TweetsOnTf competion and got featured in TFUGK Website . | Founded **Xiken.tech** . | I’ve Lead a state level Deep Learning project : ProjectAntivenom . | .",
           "url": "https://abhinavsp0730.github.io/neurlap/achievements/",
@@ -136,7 +147,7 @@
   
 
   
-      ,"page14": {
+      ,"page15": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://abhinavsp0730.github.io/neurlap/robots.txt",
