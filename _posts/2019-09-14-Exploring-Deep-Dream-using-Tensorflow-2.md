@@ -5,7 +5,7 @@ image: images/article2.jpeg
 layout: post
 description: Deep Dream is a computer vision program created by Google engineer Alex Mordvintsev which uses a convolutional neural network to find and enhance patterns in images via algorithmic pareidolia, thus creating a Dream-like hallucinogenic appearance in the deliberately over-processed images.
 categories: [markdown]
-title: Tf.estimator, a Tensorflow High-level API
+title: Exploring Deep Dream using Tensorflow 2.0 .
 ---
 
 ### Diving Into Deep Dream using Tensorflow | [Towards AI](https://towardsai.net)
