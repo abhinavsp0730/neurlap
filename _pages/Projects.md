@@ -4,7 +4,7 @@ title: Projects
 permalink: /project/
 ---
 # This page contains all of my Projects
-> youtube: https://www.youtube.com/watch?v=yQ-4SiZxMNM&t=1s
+> youtube: https://youtu.be/yQ-4SiZxMNM
 * ###  Project Antivenom
   Project AntiVenom is an innovative idea of bringing technology into the aid of human problems.
   Currently, region-specific for the Indian state of Odisha, this project aims at improving the disastrous situation between humans and snake
