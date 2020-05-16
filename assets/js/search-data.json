@@ -94,17 +94,6 @@
 
   
       ,"page4": {
-          "title": "Tweets",
-          "content": "twitter: https://twitter.com/jakevdp/status/1204765621767901185?s=20 .",
-          "url": "https://abhinavsp0730.github.io/neurlap/tweets/",
-          "relUrl": "/tweets/",
-          "date": ""
-      }
-      
-  
-
-  
-      ,"page5": {
           "title": "About Me",
           "content": "Give me the data and I’ll show you its true potential. I let computers see with the help of neural networks. I build End-to-End Machine Learning products. I know how to use data efficiently. Give me data and I’ll turn into them live projects. Helping humanity with the help of AI with this aim founded xiken.tech . I’m the lead of state-level project name ProjectAntivenom. I’m a speaker and a blogger who loves to help the community, who believes knowledge is of no use. if you don’t share and apply it. Reach out to me for spreading the knowledge of AI into your community events. I’m the co-organizer of PyData Bhubaneswar Chapter. ⚡⚡⚡⚡⚡ I’m open for internship opportunity and freelancing project ⚡⚡⚡⚡⚡⚡⚡⚡ 🛠️ Construct Ai solution for your real-world problem. 🛠️ Interested In to build Ai solution for Health Care . 🛠️ Looking For internship and freelancing project. 🛠️ Drop an Email to abhinavsp0730@gmail.com for further discussion. .",
           "url": "https://abhinavsp0730.github.io/neurlap/about/",
@@ -115,7 +104,7 @@
   
 
   
-      ,"page6": {
+      ,"page5": {
           "title": "Achievements",
           "content": "Got Featured in the Odisha’s biggest NewsPaper for my ProjectAntivenom . . | My notebook Tensorflow_Datasets_Example.ipynb got merged on official tensorflow’s github repo. . | Became the Co-organiser of Py-Data BBSR . | Won TweetsOnTf competion and got featured in TFUGK Website . | Founded **Xiken.tech** . | I’ve Lead a state level Deep Learning project : ProjectAntivenom . | .",
           "url": "https://abhinavsp0730.github.io/neurlap/achievements/",
@@ -147,7 +136,7 @@
   
 
   
-      ,"page15": {
+      ,"page14": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://abhinavsp0730.github.io/neurlap/robots.txt",
