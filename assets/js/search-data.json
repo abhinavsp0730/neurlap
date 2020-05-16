@@ -127,6 +127,14 @@
   
 
   
+      ,"page11": {
+          "title": "Tweets",
+          "content": "Tweets by NeurlAP .",
+          "url": "https://abhinavsp0730.github.io/neurlap/tweets/",
+          "relUrl": "/tweets/",
+          "date": ""
+      }
+      
   
 
   
@@ -136,7 +144,10 @@
   
 
   
-      ,"page14": {
+  
+
+  
+      ,"page15": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://abhinavsp0730.github.io/neurlap/robots.txt",
